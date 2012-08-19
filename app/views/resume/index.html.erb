@@ -1,0 +1,249 @@
+<% provide(:title, 'Resume') %>
+
+<html>
+<head>
+     <title>Andrew Svoboda</title>
+     <style type="text/css">
+        * { 
+            margin: 0;
+            padding: 0; 
+		}
+		
+        body { 
+            font: 14px;
+            font-family: Helvetica, Sans-Serif;
+            line-height: 24px 
+		}
+		
+		.dent{
+            margin-left: 3%
+		}
+		
+        #page-wrap { 
+            width: 895px; 
+            margin: 30px auto 30px; 
+		}
+		
+        h1 { 
+            color: #444; 
+            margin: 0 0 16px 0; 
+            padding: 0 0 16px 0; 
+            font-size: 36px; 
+            letter-spacing: -1px; 
+            border-bottom: 1px solid #444; 
+		}
+		
+        h2 { 
+            font-size: 18px; 
+            margin: 0 0 6px 0; 
+            position: relative; 
+            color: #848484; 
+		}
+		
+        h2 span { 
+            float: right;
+            padding: 0px 10px 0px 0px;
+            bottom: 0; 
+            right: 0; 
+            font-style: italic; 
+            font-family: Georgia, Serif; 
+            font-size: 14px; 
+            color: #444; 
+            font-weight: normal; 
+		}
+		
+		h3 { 
+            font-size: 16px; 
+            margin 0 0 6px 0;
+            position: relative; 
+            color: #848484; 
+		}
+		
+		h3 span { 
+            float: right; 
+            padding: 0px 10px 0px 0px;
+            bottom: 0; 
+            right: 0; 
+            font-style: italic; 
+            font-family: Georgia, Serif; 
+            font-size: 14px; 
+            color: #444; 
+            font-weight: normal;
+		}
+		
+		h4{
+            font-size: 14px;
+            color:#848484;
+            position: relative;
+		}
+		
+		h4 span{
+            float: right;
+            padding: 0px 10px 0px 0px;
+            font-style: italic;
+            right: 0;
+            bottom: 0;
+            font-weight: normal;
+            font-family: Georgia, Serif; 
+		}
+		
+		p { 
+            color: #444; 
+		}
+		
+		p strong {
+                color: #666;
+		}
+		
+		em { 
+            font-size: 12px; 
+            color: #888; 
+            padding: 12px 0 0;
+		}
+		
+        ul {
+            margin: 0 0 18px 18px;
+		}
+        
+        .section-body {
+            width: 85%; 
+            float: right; 
+            color: #444        
+        }
+        
+        .section-header {
+             color: #777; 
+            font-style: italic; 
+            font-weight: bold; 
+            font-size: 16px; 
+            text-align: right; 
+            padding: 0 40px 0 0; 
+            width: 9%; 
+            float: left; 
+            height: 100px; 
+            border-right: 1px solid #999;         
+        }
+		
+        .clear {
+            clear: both;
+            float: none; 
+            margin: 0; 
+            height: 15px; 
+		}
+     </style>
+</head>
+<body>
+    <div id="page-wrap">
+        <div id="contact-info">
+            <h1>Andrew Svoboda</h1>
+			<h2>2B Computer Engineering, University of Waterloo - 20369388</h2>
+            <p>
+				<span class="tel">519-760-0277</span><br />
+				<a class="email" href="mailto:asvoboda@uwaterloo.ca">asvoboda@uwaterloo.ca</a>
+            </p>
+        </div>
+        <div class="clear"></div>
+        <dl>
+            <div class="clear"></div>
+            <div class="section-header">Highlights</div>
+            <div class="section-body">
+                <h2>Core Skills</h2>
+				<div class="dent">
+					<ul>
+                        <li>Proficient in Python, Java, C++, Javascript, R (Experienced in others)</li>
+                        <li>Well versed in front design: CSS; HTML, and back end frameworks: Django; Rails</li>
+                        <li>Experience contributing to and debugging both large and small scale software systems</li>
+					</ul>				
+				</div>
+				<h2>Strong Soft Skills</h2>
+				<div class="dent">
+					<ul>
+                        <li>Passionate about learning - many skills are self taught and reflect a desire for understanding and further personal development</li>
+                        <li>Strong ability to quickly learn, adapt, and gain proficiency in new technologies</li>
+					</ul>
+				</div>			
+            </div>
+            <div class="clear"></div>
+            <div class="section-header">Professional</div>
+			<div class="section-body">
+				<h2>Kontagent, Toronto ON <span> Software Engineer, May - Aug 2012 </span></h2>
+				<div class="dent">
+					<em><strong>Evaluation: Oustanding</strong><br>
+						'Words'</em>
+					<ul>
+                        <li>Created behaviourally targeted user notification service using Drools (Java based rule engine) to allow Product and Support teams to directly connect with users on the Dashboard product</li>
+                        <li>Contributed to building out and fixing a new partner provisioning API</li>
+                        <li>Performed production evolution duties on Javascript and Python (Django) bugs occuring on the customer facing Dashboard product</li>
+					</ul>
+				</div>
+			</div>            
+			<div class="section-body">
+				<h2>RedIron Tech., London ON <span> Software Developer, Sep - Dec 2011 </span></h2>
+				<div class="dent">
+					<em><strong>Evaluation: Excellent</strong><br>
+						'[Andrew's] areas of strength include: Open to ideas/feedback; Ability to learn; Problem solving. [..] [He] had very good interpersonal skills and cooperated well with everyone in the office.'</em>
+					<ul>
+                        <li>Designed and implemented an automated build deployment server and web interface using PHP, Javascript (jQuery) to easily deploy products to QA and Customers</li>
+                        <li>Designed and implemented an automated build server and web interface using Django and a cherrypy server to remote begin a WiX build process of a selected product</li>
+                        <li>Worked on core product with other team members to further enhance the functionality of the product according to customer specifications</li>
+					</ul>
+				</div>
+			</div>
+            <div class="section-body">
+                <h2>Nuance Communications, Montreal QC <span> Data Analyst, Jan - Apr 2011</span></h2>
+				<div class="dent">
+					<em><strong>Evaluation: Outstanding</strong><br>
+						'Andrew is exceptionally bright and a quick learner. He was very productive and consistently did things faster than anticipated. [..] When offered constructive criticism of his work, he always took it well and quickly returned a new version that addressed the concerns.'</em>
+					<ul>
+                        <li>Processed and analyzed large amounts of data in visually and interactively intuitive manners</li>
+                        <li>Analyzed logged call data in order to understand trends and help enrich applications and technology to further automate future processing</li>
+                        <li>Attended to and completed various complicated side projects to meet a surprise deadline thrust upon the team </li>
+					</ul>
+                </div>
+            </div>
+			<div class="clear"></div>
+			<div class="section-header">Projects</div>
+			<div class="section-body">
+				<h2>Multiplayer Experiment</h2>
+				<ul>
+					<li>Multiplayer rouge-like experiment game using Node.js, socket.io hosted on Heroku</li>
+				</ul>            
+				<h2>Personal Jobmine Notification</h2>
+				<ul>
+					<li>Created a notification system in Python to scrape Jobmine and send an email periodically with job application state changes <em>(because who really enjoys jobmine?)</em></li>	
+				</ul>
+				<h2>Game of World Domination</h2>
+				<ul>
+					<li>Designed and created a game of Risk, complete with a GUI, sound, and multiple human players in Java</li>
+				</ul>                
+			</div>
+			<div class="clear"></div>
+			<div class="section-header">Education</div>
+            <div class="section-body">
+                <h2>University of Waterloo, Waterloo ON<span> Sep 2010 - Present</span></h2>
+				<div class="dent">
+					<p><strong>Major:</strong> Honours Computer Engineering</p>
+					<p><strong>Relevant Courses: </strong>Digital Circuits, Digital Computers, Embedded Systems Programming, Algorithms and Data Structures</p>
+					<h4>Engineering Society ECE Class 2015 Representative <span>Sep 2010 - Present</span></h4>
+					<ul>
+						<li>Attend all bi-weekly Engineering Society meetings and represent class when voting on policy amendments</li>
+						<li>Maintain a link between the class and the executive,  making sure the class is informed of upcoming events and policy</li>
+					</ul>
+				</div>
+				<h2>Centennial C.V.I., Guelph ON <span> Sep 2007 - Jun 2010</span></h2>
+				<div class="dent">
+					<h4>Waterloo-Wellington Science & Engineering Fair Project<span> Nov 2009 - Apr 2010</span></h4>
+					<ul>
+						<li>Researched and conducted trials synthesizing commercially viable Ferofluids in the University of Guelph Nanoscience Labs</li>
+						<li>Achieved Gold Medal Standard</li>
+					</ul>
+				</div>
+            </div>			
+			<div class="clear"></div>
+            <div class="section-header">Hobbies</div>
+            <div class="section-body">Murder Most Foul; Coding; Drawing and Painting; Canadian History; Analog Photography</div>
+            <div class="clear"></div>
+        </dl>
+    </div>
+</body>
+</html>
