@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>Andrew Svoboda | <%= yield(:title) %></title>
-    <%= stylesheet_link_tag    "application", :media => "all" %>
-    <%= javascript_include_tag "application" %>
+    <%= stylesheet_link_tag    "bootstrap" %>
+    <%= stylesheet_link_tag    "all" %>
+    <%= javascript_include_tag "jquery" %>
+    <%= javascript_include_tag "bootstrap" %>
     <%= csrf_meta_tags %>
 </head>
 <body>
@@ -25,13 +27,16 @@
                 </li>-->
                 <li><%= link_to "Booklist", '/booklist' %></li>
                 <li><%= link_to "Github", 'https://github.com/asvoboda' %></li>
+                <li><%= link_to "Blog", '/posts' %></li>
                 <li><%= link_to "Resume", '/resume' %></li>
             </ul>
         </div>
     </div>
 </div>
 
-<%= yield %>
+<div id="content">
+	<%= yield %>
+</div>
 
 </body>
 </html>

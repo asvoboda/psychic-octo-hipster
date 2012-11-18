@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+ 
+ 
+<h3><%= @post.title %></h3>
+<h5>posted by <%= @post.name %> on <%= @post.created_at.strftime("%d.%m.%Y")%></h5>
+ 
+<div class="post-content">
+  <%= @post.content %>
+</div>
+ 
+<div id="comments">
+<h4>Comments</h4>
+<% @post.comments.each do |comment| %>
+  <div class="comment-name">
+    <%= comment.commenter %>
+  </div>
+ 
+  <div class="comment-body">
+    <%= comment.body %>
+  </div>
+<% end %>
+</div>
+ 
+<h4>Add a comment:</h4>
+<%= form_for([@post, @post.comments.build]) do |f| %>
+  <div class="field">
+    <%= f.label :commenter %><br />
+    <%= f.text_field :commenter %>
+  </div>
+  <div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+ 
+<br />
+ 
+<%= link_to 'Back to Posts', posts_path %>
