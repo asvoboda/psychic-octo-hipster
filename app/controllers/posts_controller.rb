@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  http_basic_authenticate_with :name => ENV['muser'], :password => ENV['mpwd'], :except => [:index, :show]
   # GET /posts
   # GET /posts.json
   def index
