@@ -1,11 +1,23 @@
+#cover {
+	height: 100%;
+	width: 100%;
+	position: fixed;
+
+	background-image: url("cover.JPG");
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;	
+	background-size: cover;
+}
+
 body {
     padding-top: 40px;
-    min-width: 944px;
 }
 
 #content {
 	width: 80%;
-	margin: 0 auto;
+	margin: 0px auto 0px auto;
+	padding-bottom: 25px;
 }
 
 .post-name {

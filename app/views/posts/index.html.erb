@@ -4,20 +4,21 @@
 
 <% if not @posts.empty? %>
 <div id="posts">
-    <% @posts.each do |post| %>
-        <div class="post">
-            <div>
-                <h3><%= post.title %></h3>
-                <h5>posted by <%= post.name %> on <%= post.created_at.strftime("%d.%m.%Y")%></h5>
-            </div>
+	<% @posts.each do |post| %>
+		<div class="post">
+			<div>
+				<h3><%= post.title %></h3>
+				<h5>posted by <%= post.name %> on <%= post.created_at.strftime("%d.%m.%Y")%></h5>
+			</div>
 			<div class="post_content left">
 				<%= raw(post.content) %>
 			</div>   
 
-            <%= link_to 'Show', post_path(post) %>
-        </div>
-    <% end %>
+			<%= link_to 'Show', post_path(post) %>
+		</div>
+	<% end %>
 </div>  
+<%= will_paginate @page_results %>
 <% else %>
     <h3>It seems like Andrew hasn't posted a blog post yet</h3>
 <% end %>

@@ -49,6 +49,11 @@
     </div>
 </div>
 
+<% if content_for(:title) == 'Home' %>
+<div id="cover">
+</div>
+<% end %>
+
 <div id="content">
 	<%= yield %>
 </div>
