@@ -20,6 +20,11 @@ body {
 	padding-bottom: 25px;
 }
 
+.post {
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+}
+
 .post-name {
 	
 }
