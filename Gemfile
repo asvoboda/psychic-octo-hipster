@@ -20,7 +20,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem "therubyracer-heroku", "~> 0.8.1.pre3"
+  gem 'libv8', '~> 3.11.8'
   gem 'therubyracer', :platform => :ruby
 
   gem 'uglifier', '>= 1.0.3'
