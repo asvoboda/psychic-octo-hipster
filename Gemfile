@@ -8,7 +8,7 @@ gem 'rails', '3.2.6'
 
 gem 'pg', :group => :production
 gem 'sqlite3', :group => :development
-
+gem 'libv8', :group => :production
 
 
 gem 'will_paginate', '~> 3.0.0'
@@ -20,7 +20,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'libv8', '~> 3.11.8'
+  
   gem 'therubyracer', :platform => :ruby
 
   gem 'uglifier', '>= 1.0.3'
