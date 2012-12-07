@@ -1,11 +1,10 @@
 <p id="notice"><%= notice %></p>
  
- 
 <h3><%= @post.title %></h3>
 <h5>posted by <%= @post.name %> on <%= @post.created_at.strftime("%d.%m.%Y")%></h5>
  
 <div class="post-content">
-  <%= @post.content %>
+  <%= raw(@post.content).html_safe %>
 </div>
  
 <div id="comments">

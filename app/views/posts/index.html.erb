@@ -1,7 +1,5 @@
 <% provide(:title, 'Blog') %>
 
-<h2 id="page-header">Blog</h2>
-
 <% if not @posts.empty? %>
 <div id="posts">
 	<% @posts.each do |post| %>
@@ -11,7 +9,7 @@
 				<h5>posted by <%= post.name %> on <%= post.created_at.strftime("%d.%m.%Y")%></h5>
 			</div>
 			<div class="post_content left">
-				<%= raw(post.content) %>
+				<%= raw(post.content).html_safe %>
 			</div>   
 
 			<%= link_to 'Show', post_path(post) %>

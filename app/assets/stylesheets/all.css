@@ -32,3 +32,8 @@ body {
 .post-title {
 
 }
+
+#post_content,
+#comment_body{
+	width: 100%;
+}
