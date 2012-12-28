@@ -2,7 +2,7 @@
 	height: 100%;
 	width: 100%;
 	position: fixed;
-	display: block;
+	background-position: 50% 50%;
 
 	background-image: url("cover.JPG");
 	-webkit-background-size: cover;
