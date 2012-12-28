@@ -2,6 +2,7 @@
 	height: 100%;
 	width: 100%;
 	position: fixed;
+	display: block;
 
 	background-image: url("cover.JPG");
 	-webkit-background-size: cover;
@@ -40,5 +41,11 @@ body {
 }
 
 .centre{
+	
+}
+
+.iframe-associate{
+	width: 80%;
+	height: 400px;
 	margin: 0px auto 0px auto;
 }
