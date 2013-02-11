@@ -1,8 +1,9 @@
 <% provide(:title, 'Booklist') %>
 <h1>Booklist</h1>
 
-<p>I enjoy reading novels. Recently, a friend of mine and I have started an interesting project: Read 100 well-known, classic, or interesting novels. Below is a list of where we both currently stand.</p>
-<div class="centre">
+<p>I enjoy reading novels. Recently, a friend of mine and I have started an interesting project: Read 100 well-known, classic, or interesting novels.
+ Below I've put together a few graphs and graphs based on what we're reading to better visualise the novels and associated authors.</p>
+<!--<div class="centre">
 	<iframe class='iframe-associate' frameborder='0' src='https://docs.google.com/spreadsheet/pub?key=0AsN8GeI30lYodHBkY0RHUjFCckRRN0xVN0MybDZqeXc&single=true&gid=0&range=A1%3AF101&output=html&widget=true'></iframe>
 </div>
 <h1>Graphs</h2>
@@ -14,3 +15,168 @@
 <%= image_tag "/assets/boxplot_andrew.jpeg"  %>
 
 <div class="centre"><iframe class='iframe-associate' frameborder='0' src='/assets/influencers.pdf'></iframe></div>
+-->
+<h3>The Novels</h3>
+<div id="table-div-1" style="width:900px; height:500px;"></div>
+<h3>Average Age of Novels By Country</h3>
+<div id="chart-div-1" style="width: 900px; height: 500px;"></div>
+<h3>Frequency of Novels by Country</h3>
+<div id="chart-div-2" style="width: 900px; height: 500px;"></div>
+<h3>Influencing Authors</h3>
+<div id="chart-div-3" style="width: 900px; height: 700px;"></div>
+
+<script>
+ google.load('visualization', '1', {'packages': ['geochart', 'table']});
+ google.setOnLoadCallback(drawMapStuff);
+ 
+ var chartId = 1;
+ var tableId = 1;
+ var links = [];
+ 
+ var ds = new Miso.Dataset({
+   importer : Miso.Dataset.Importers.GoogleSpreadsheet,
+   parser : Miso.Dataset.Parsers.GoogleSpreadsheet,
+   key : "0AsN8GeI30lYodHBkY0RHUjFCckRRN0xVN0MybDZqeXc",
+   worksheet : "2"
+ });
+
+  ds.fetch({ 
+    success : function() {
+      //console.log(ds.columnNames());
+	  //console.log(ds.rowByPosition(1));
+	  for(var i =0; i < ds.length; i++){
+		links.push({"source": ds.rowByPosition(i).Influencer, "target": ds.rowByPosition(i).Influenced, "type": "influence"});
+	  }
+	  console.log(links);
+
+	var nodes = {};
+
+	// Compute the distinct nodes from the links.
+	links.forEach(function(link) {
+	  link.source = nodes[link.source] || (nodes[link.source] = {name: link.source});
+	  link.target = nodes[link.target] || (nodes[link.target] = {name: link.target});
+	});
+
+	var w = 900,
+		h = 700;
+
+	var force = d3.layout.force()
+		.nodes(d3.values(nodes))
+		.links(links)
+		.size([w, h])
+		.linkDistance(60)
+		.charge(-300)
+		.on("tick", tick)
+		.start();
+
+	var svg = d3.select("#chart-div-3").append("svg:svg")
+		.attr("width", w)
+		.attr("height", h);
+
+	// Per-type markers, as they don't inherit styles.
+	svg.append("svg:defs").selectAll("marker")
+		.data(["influence"])
+	  .enter().append("svg:marker")
+		.attr("id", String)
+		.attr("viewBox", "0 -5 10 10")
+		.attr("refX", 15)
+		.attr("refY", -1.5)
+		.attr("markerWidth", 6)
+		.attr("markerHeight", 6)
+		.attr("orient", "auto")
+	  .append("svg:path")
+		.attr("d", "M0,-5L10,0L0,5");
+
+	var path = svg.append("svg:g").selectAll("path")
+		.data(force.links())
+	  .enter().append("svg:path")
+		.attr("class", function(d) { return "link " + d.type; })
+		.attr("marker-end", function(d) { return "url(#" + d.type + ")"; });
+
+	var circle = svg.append("svg:g").selectAll("circle")
+		.data(force.nodes())
+	  .enter().append("svg:circle")
+		.attr("r", 6)
+		.call(force.drag);
+
+	var text = svg.append("svg:g").selectAll("g")
+		.data(force.nodes())
+	  .enter().append("svg:g");
+
+	// A copy of the text with a thick white stroke for legibility.
+	text.append("svg:text")
+		.attr("x", 8)
+		.attr("y", ".31em")
+		.attr("class", "shadow")
+		.text(function(d) { return d.name; });
+
+	text.append("svg:text")
+		.attr("x", 8)
+		.attr("y", ".31em")
+		.text(function(d) { return d.name; });
+
+	// Use elliptical arc path segments to doubly-encode directionality.
+	function tick() {
+	  path.attr("d", function(d) {
+		var dx = d.target.x - d.source.x,
+			dy = d.target.y - d.source.y,
+			dr = Math.sqrt(dx * dx + dy * dy);
+		return "M" + d.source.x + "," + d.source.y + "A" + dr + "," + dr + " 0 0,1 " + d.target.x + "," + d.target.y;
+	  });
+
+	  circle.attr("transform", function(d) {
+		return "translate(" + d.x + "," + d.y + ")";
+	  });
+
+	  text.attr("transform", function(d) {
+		return "translate(" + d.x + "," + d.y + ")";
+	  });
+	}	  
+	  
+    },
+    error : function() {
+      console.log("Are you sure you are connected to the internet?");
+    }
+  });
+ 
+ function drawMapStuff() {
+ 
+   var tableQuery = new google.visualization.Query('http://spreadsheets.google.com/tq?key=0AsN8GeI30lYodHBkY0RHUjFCckRRN0xVN0MybDZqeXc&pub=1&gid=0');
+   tableQuery.setQuery('select A, B, C, D, E WHERE E > 100');
+   tableQuery.send(handleTableQueryResponse);
+ 
+   var avgAgeQuery = new google.visualization.Query('http://spreadsheets.google.com/tq?key=0AsN8GeI30lYodHBkY0RHUjFCckRRN0xVN0MybDZqeXc&pub=1&gid=0');
+   avgAgeQuery.setQuery('select D, avg(E) group by D');
+   avgAgeQuery.send(handleChartQueryResponse);
+   
+   var freqCountryQuery = new google.visualization.Query('http://spreadsheets.google.com/tq?key=0AsN8GeI30lYodHBkY0RHUjFCckRRN0xVN0MybDZqeXc&pub=1&gid=0');
+   freqCountryQuery.setQuery('select D, count(E) group by D');
+   freqCountryQuery.send(handleChartQueryResponse);
+ };
+ 
+ function handleChartQueryResponse(response) {
+  if (response.isError()) {
+    console.log('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+    return;
+  }
+  var data = response.getDataTable();
+  var formatter = new google.visualization.NumberFormat({
+    fractionDigits: 0
+   });
+  formatter.format(data, 1); // Apply formatter to second column.  
+
+  var visualization = new google.visualization.GeoChart(document.getElementById('chart-div-' + chartId++));
+  visualization.draw(data, null);
+ };
+ 
+ function handleTableQueryResponse(response) {
+  if (response.isError()) {
+    console.log('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+    return;
+  }
+  var data = response.getDataTable();
+
+  var visualization = new google.visualization.Table(document.getElementById('table-div-' + tableId++));
+  visualization.draw(data, null);
+ }; 
+</script>
