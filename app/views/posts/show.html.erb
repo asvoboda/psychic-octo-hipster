@@ -4,7 +4,7 @@
 <h5>posted by <%= @post.name %> on <%= @post.created_at.strftime("%d.%m.%Y")%></h5>
  
 <div class="post-content">
-  <%= raw(@post.content).html_safe %>
+  <%= simple_format(@post.content) %>
 </div>
  
 <div id="comments">
