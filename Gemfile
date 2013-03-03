@@ -45,3 +45,8 @@ gem 'newrelic_rpm'
 
 # To use debugger
 # gem 'debugger'
+
+gem 'paperclip', '3.0.4'
+
+gem 'aws-s3'
+gem 'aws-sdk'

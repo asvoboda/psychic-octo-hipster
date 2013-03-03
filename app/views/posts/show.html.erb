@@ -3,9 +3,18 @@
 <h3><%= @post.title %></h3>
 <h5>posted by <%= @post.name %> on <%= @post.created_at.strftime("%d.%m.%Y")%></h5>
  
-<div class="post-content">
-  <%= simple_format(@post.content) %>
-</div>
+<% if @post.photo.url(:large) != "/photos/large/missing.png" %>
+    <div class="post_picture"> 
+        <%= image_tag @post.photo.url(:large) %>
+    </div>
+    <div class="post_content">
+        <%= simple_format(@post.content) %>
+    </div>                
+<% else %>
+    <div class="post_content left">
+        <%= simple_format(@post.content) %>
+    </div>   
+<% end %> 
  
 <div id="comments">
 <h4>Comments</h4>
