@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
  
 <h3><%= @post.title %></h3>
-<h5>posted by <%= @post.name %> on <%= @post.created_at.strftime("%d.%m.%Y")%></h5>
+<h5>posted by <%= @post.name %> on <%= @post.created_at.strftime("%Y-%m-%d")%></h5>
  
 <% if @post.photo.url(:large) != "/photos/large/missing.png" %>
     <div class="post_picture"> 
@@ -32,11 +32,11 @@
 <h4>Add a comment:</h4>
 <%= form_for([@post, @post.comments.build]) do |f| %>
   <div class="field">
-    <%= f.label :commenter %><br />
+    <%= f.label :commenter %>
     <%= f.text_field :commenter %>
   </div>
   <div class="field">
-    <%= f.label :body %><br />
+    <%= f.label :body %>
     <%= f.text_area :body %>
   </div>
   <div class="actions">

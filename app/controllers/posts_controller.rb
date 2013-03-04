@@ -1,4 +1,10 @@
+class ApplicationController < ActionController::Base
+  include ::SslRequirement
+end
+
 class PostsController < ApplicationController
+  ssl_exceptions :index, :show
+  ssl_allowed :index, :show
   http_basic_authenticate_with :name => ENV['muser'], :password => ENV['mpwd'], :except => [:index, :show]
   # GET /posts
   # GET /posts.json
