@@ -20,11 +20,11 @@
 <h4>Comments</h4>
 <% @post.comments.each do |comment| %>
   <div class="comment-name">
-    <%= comment.commenter %>
+    <strong><%= comment.commenter %></strong>
   </div>
  
   <div class="comment-body">
-    <%= comment.body %>
+    <%= simple_format(comment.body) %>
   </div>
 <% end %>
 </div>

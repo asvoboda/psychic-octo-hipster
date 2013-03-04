@@ -31,8 +31,7 @@
 
 }
 
-#post_content,
-#comment_body{
+#post_content{
 	width: 80%;
 	height: 50%;
 }
