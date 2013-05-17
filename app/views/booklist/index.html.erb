@@ -40,13 +40,13 @@ I enjoy reading novels. Recently, a friend of mine and I have started an interes
    importer : Miso.Dataset.Importers.GoogleSpreadsheet,
    parser : Miso.Dataset.Parsers.GoogleSpreadsheet,
    key : "0AsN8GeI30lYodHBkY0RHUjFCckRRN0xVN0MybDZqeXc",
-   worksheet : "2"
+   worksheet : "3"
  });
 
   ds.fetch({ 
     success : function() {
-      //console.log(ds.columnNames());
-	  //console.log(ds.rowByPosition(1));
+      console.log(ds.columnNames());
+	  console.log(ds.rowByPosition(1));
 	  for(var i =0; i < ds.length; i++){
 		links.push({"source": ds.rowByPosition(i).Influencer, "target": ds.rowByPosition(i).Influenced, "type": "influence"});
 	  }
