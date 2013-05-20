@@ -1,3 +1,15 @@
+GIT
+  remote: git://github.com/lsegal/paperclip
+  revision: 022598c1e9982c9199d5b28971faa25281b0bb8d
+  branch: remove-aws-sdk-version-check
+  specs:
+    paperclip (3.4.1)
+      activemodel (>= 3.0.0)
+      activerecord (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.5.0)
+      mime-types
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -40,7 +52,10 @@ GEM
       uuidtools (~> 2.1)
     bartt-ssl_requirement (1.4.2)
     builder (3.0.0)
-    cocaine (0.3.2)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.1)
+      climate_control (>= 0.0.3, < 1.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -72,12 +87,6 @@ GEM
     newrelic_rpm (3.5.4.34)
     nokogiri (1.5.5)
     nokogiri (1.5.5-x86-mingw32)
-    paperclip (3.2.1)
-      activemodel (>= 3.0.0)
-      activerecord (>= 3.0.0)
-      activesupport (>= 3.0.0)
-      cocaine (>= 0.0.2)
-      mime-types
     pg (0.14.0)
     pg (0.14.0-x86-mingw32)
     polyglot (0.3.3)
@@ -137,12 +146,11 @@ DEPENDENCIES
   aws-s3
   aws-sdk
   bartt-ssl_requirement (~> 1.4.0)
-  cocaine (= 0.3.2)
   coffee-rails (~> 3.2.1)
   jquery-rails
   libv8
   newrelic_rpm
-  paperclip (~> 3.0)
+  paperclip!
   pg
   rails (= 3.2.6)
   sass-rails (~> 3.2.3)
