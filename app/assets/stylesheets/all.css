@@ -87,3 +87,8 @@ text.shadow {
 #chart-div-3 {
 	border: solid 1px #ddd;
 }
+
+.how-many {
+	position: relative;
+	top: 100px;
+}

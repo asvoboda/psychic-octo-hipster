@@ -1,4 +1,5 @@
 PsychicOctoHipster::Application.routes.draw do
+
   resources :posts do
     resources :comments
   end  
@@ -6,6 +7,7 @@ PsychicOctoHipster::Application.routes.draw do
   root :to => "home#index"
   match "/resume" => "resume#index"
   match "/booklist" => "booklist#index"
+  match "/irs" => "irs#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
