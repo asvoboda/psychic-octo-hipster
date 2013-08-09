@@ -27,7 +27,7 @@ group :assets do
   #gem 'less'
 end
 
-gem 'jquery-rails', '~> 3.0.0'
+#gem 'jquery-rails'
 
 gem 'newrelic_rpm'
 
@@ -38,7 +38,7 @@ gem 'newrelic_rpm'
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+#gem 'unicorn', :group => :production
 
 # Deploy with Capistrano
 # gem 'capistrano'
