@@ -5,11 +5,9 @@ gem 'rails', '3.2.6'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-
 gem 'pg', :group => :production
 gem 'sqlite3', :group => :development
 gem 'libv8', :group => :production
-
 
 gem 'will_paginate', '~> 3.0.0'
 
@@ -17,7 +15,6 @@ gem 'will_paginate', '~> 3.0.0'
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   
@@ -30,21 +27,6 @@ end
 #gem 'jquery-rails'
 
 gem 'newrelic_rpm'
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-#gem 'unicorn', :group => :production
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
 
 gem 'paperclip', '3.4.2'
 
