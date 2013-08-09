@@ -27,7 +27,7 @@ group :assets do
   #gem 'less'
 end
 
-gem 'jquery-rails'
+gem 'jquery-rails', '~> 3.0.0'
 
 gem 'newrelic_rpm'
 
