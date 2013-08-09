@@ -21,7 +21,7 @@
 				</div>   
 			<% end %>  
 			<%= link_to post do %>
-				<span>Comments</span>
+				<span><%= pluralize(post.comments.length, "Comment") %></span>
 			<% end %>
 		</div>
 	<% end %>
