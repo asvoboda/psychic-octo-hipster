@@ -32,7 +32,8 @@ I enjoy reading novels. Recently, a friend of mine and I have started an interes
  google.load('visualization', '1', {'packages': ['geochart', 'table']});
  google.setOnLoadCallback(drawMapStuff);
  
- var chartId = 1;
+ var ageChart = 1;
+ var freqChart = 2;
  var tableId = 1;
  var links = [];
  
@@ -150,14 +151,15 @@ I enjoy reading novels. Recently, a friend of mine and I have started an interes
  
    var avgAgeQuery = new google.visualization.Query('http://spreadsheets.google.com/tq?key=0AsN8GeI30lYodHBkY0RHUjFCckRRN0xVN0MybDZqeXc&pub=1&gid=0');
    avgAgeQuery.setQuery('select D, avg(E) group by D');
-   avgAgeQuery.send(handleChartQueryResponse);
+   //avgAgeQuery.send(handleChartQueryResponse);
+   avgAgeQuery.send(handleAgeChart);
    
    var freqCountryQuery = new google.visualization.Query('http://spreadsheets.google.com/tq?key=0AsN8GeI30lYodHBkY0RHUjFCckRRN0xVN0MybDZqeXc&pub=1&gid=0');
    freqCountryQuery.setQuery('select D, count(E) group by D');
-   freqCountryQuery.send(handleChartQueryResponse);
+   freqCountryQuery.send(handleFreqChart);
  };
  
- function handleChartQueryResponse(response) {
+ function handleAgeChart(response) {
   if (response.isError()) {
     console.log('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
     return;
@@ -168,9 +170,24 @@ I enjoy reading novels. Recently, a friend of mine and I have started an interes
    });
   formatter.format(data, 1); // Apply formatter to second column.  
 
-  var visualization = new google.visualization.GeoChart(document.getElementById('chart-div-' + chartId++));
+  var visualization = new google.visualization.GeoChart(document.getElementById('chart-div-' + ageChart));
   visualization.draw(data, null);
  };
+ 
+ function handleFreqChart(response) {
+  if (response.isError()) {
+    console.log('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+    return;
+  }
+  var data = response.getDataTable();
+  var formatter = new google.visualization.NumberFormat({
+    fractionDigits: 0
+   });
+  formatter.format(data, 1); // Apply formatter to second column.  
+
+  var visualization = new google.visualization.GeoChart(document.getElementById('chart-div-' + freqChart));
+  visualization.draw(data, null);
+ }; 
  
  function handleTableQueryResponse(response) {
   if (response.isError()) {
