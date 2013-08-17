@@ -1,5 +1,9 @@
+window.onresize = function() {
+    galleryify();
+}
+
 //from https://github.com/crispymtn/linear-partition/blob/master/linear_partition.coffee
-var linear_parition = function(seq, k) {
+function linear_parition(seq, k) {
 	var n = seq.length;
 	if (k <= 0) {
 		return [];
@@ -71,10 +75,6 @@ var linear_parition = function(seq, k) {
 	}
 	return ret;
 };
-
-window.onresize = function() {
-    galleryify();
-}
 
 function resize_img($p, ideal_width, ideal_height) {
 	$p.css({"width": ideal_width, "height": ideal_height});
