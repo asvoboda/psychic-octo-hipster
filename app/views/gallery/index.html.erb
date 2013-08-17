@@ -1,0 +1,18 @@
+<% provide(:title, 'Gallery') %>
+<div id="gallery">
+	<% @posts.each do |post| %>
+		<div class="picture"> 
+			<%= image_tag post.photo.url(:large) %>
+		</div>              
+	<% end %>
+</div>
+
+<script>
+	//preprocessing
+	var $imgs = $("#gallery .picture img");
+	_.each($imgs, function(img) {
+		var $img = $(img);
+		$img.data("aspect-ratio", $img.height()/$img.width());
+	});
+	galleryify();
+</script>
