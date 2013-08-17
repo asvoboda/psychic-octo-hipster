@@ -92,3 +92,8 @@ text.shadow {
 	position: relative;
 	top: 100px;
 }
+
+.picture {
+	float: left;
+	margin: 2px 2px 2px 2px;
+}
