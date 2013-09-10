@@ -5,6 +5,11 @@
 			<%= image_tag post.photo.url(:large) %>
 		</div>              
 	<% end %>
+	<% @covers.each do |cover| %>
+		<div class="picture"> 
+			<%= image_tag cover.photo.url(:large) %>
+		</div>              
+	<% end %>	
 </div>
 
 <script>
