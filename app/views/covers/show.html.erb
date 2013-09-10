@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+ 
+<h3><%= @cover.title %></h3>
+    <div class="post_picture"> 
+        <%= image_tag @cover.photo.url(:large) %>
+    </div>
+<br />
+ 
+<%= link_to 'Back to Covers', covers_path %> | 
+<%= link_to 'edit', edit_cover_path %>

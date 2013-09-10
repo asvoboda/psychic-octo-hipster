@@ -1,0 +1,61 @@
+<% provide(:title, 'Places') %>
+
+
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+
+<script>
+function initialize() {
+
+  var locations = [];
+  var toronto = new google.maps.LatLng(43.652830,-79.398146);
+  locations.push(new google.maps.LatLng(40.739730,-73.990941)); //new york
+  locations.push(new google.maps.LatLng(37.791117,-122.395844)); //sanFran
+  
+  locations.push(new google.maps.LatLng(20.4167,-86.9167)); //cozumel
+  locations.push(new google.maps.LatLng(19.3333,-81.4000)); //grand cayman
+  
+  
+  locations.push(new google.maps.LatLng(45.510482, -73.578525)); //montreal
+  locations.push(new google.maps.LatLng(43.470441, -80.544415)); //waterloo
+  locations.push(new google.maps.LatLng(43.547382, -80.245037)); //guelph
+  locations.push(toronto);
+  
+  locations.push(new google.maps.LatLng(43.7833,11.2500)); //florence
+  locations.push(new google.maps.LatLng(41.9000,12.5000)); //rome
+  locations.push(new google.maps.LatLng(40.6333,14.3833)); //sorrento
+  locations.push(new google.maps.LatLng(45.4375,12.3358)); //venice
+  locations.push(new google.maps.LatLng(40.8450,14.2583)); //naples
+  
+  locations.push(new google.maps.LatLng(50.082302,14.426298)); //prague
+  locations.push(new google.maps.LatLng(50.080043,12.370245)); //cheb  
+  locations.push(new google.maps.LatLng(48.8167,14.3167)); //cesky krumlov
+  locations.push(new google.maps.LatLng(48.8489,17.1322)); //hodonin
+  
+  locations.push(new google.maps.LatLng(48.2083,16.3731)); //vienna
+  
+  locations.push(new google.maps.LatLng(46.5500,15.6500)); //maribor
+  locations.push(new google.maps.LatLng(45.5500,13.7333)); //koper
+  
+  //locations.push(new google.maps.LatLng(45.5500,13.8500)); //pula
+  locations.push(new google.maps.LatLng(44.8219,13.9350)); //medulin
+  
+  
+  var mapOptions = {
+    zoom: 4,
+    center: toronto,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  }
+  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+  _.each(locations, function(mark) {
+    var temp = new google.maps.Marker({
+		position : mark,
+		map: map
+	});
+  }); 
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+<div id="map-canvas" style="height:400px"></div>

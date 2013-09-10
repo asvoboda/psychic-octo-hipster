@@ -1,1 +1,11 @@
 <% provide(:title, 'Home') %>
+
+<style>
+#cover {
+<% if @cover != nil %>
+	background-image:url("<%= @cover.photo.url(:large) %>");
+<% else %>
+	background-image:url("assets/cover.JPG");
+<% end %>
+}
+</style>

@@ -46,12 +46,12 @@ I enjoy reading novels. Recently, a friend of mine and I have started an interes
 
   ds.fetch({ 
     success : function() {
-      console.log(ds.columnNames());
-	  console.log(ds.rowByPosition(1));
+      //console.log(ds.columnNames());
+	  //console.log(ds.rowByPosition(1));
 	  for(var i =0; i < ds.length; i++){
 		links.push({"source": ds.rowByPosition(i).Influencer, "target": ds.rowByPosition(i).Influenced, "type": "influence"});
 	  }
-	  console.log(links);
+	  //console.log(links);
 
 	var nodes = {};
 
@@ -139,7 +139,7 @@ I enjoy reading novels. Recently, a friend of mine and I have started an interes
 	  
     },
     error : function() {
-      console.log("Are you sure you are connected to the internet?");
+      //console.log("Are you sure you are connected to the internet?");
     }
   });
  
@@ -176,7 +176,7 @@ I enjoy reading novels. Recently, a friend of mine and I have started an interes
  
  function handleFreqChart(response) {
   if (response.isError()) {
-    console.log('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+    //console.log('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
     return;
   }
   var data = response.getDataTable();
@@ -191,7 +191,7 @@ I enjoy reading novels. Recently, a friend of mine and I have started an interes
  
  function handleTableQueryResponse(response) {
   if (response.isError()) {
-    console.log('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+    //console.log('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
     return;
   }
   var data = response.getDataTable();

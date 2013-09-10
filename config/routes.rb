@@ -9,6 +9,9 @@ PsychicOctoHipster::Application.routes.draw do
   match "/booklist" => "booklist#index"
   match "/irs" => "irs#index"
   match "/gallery" => "gallery#index"
+  match "/places" => "places#index"
+  
+  resources :covers
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

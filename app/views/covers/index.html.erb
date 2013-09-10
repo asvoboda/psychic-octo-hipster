@@ -1,0 +1,18 @@
+<% if not @covers.empty? %>
+<div id="covers">
+	<% @covers.each do |cover| %>
+		<div class="cover">
+			<div class="cover_picture"> 
+				<h4><%= cover.title %></h4>
+				<%= link_to cover do %>
+					<%= image_tag cover.photo.url(:medium) %>
+				<% end %>
+			</div>             
+			
+			
+		</div>
+	<% end %>
+</div>  
+<% else %>
+    <h3>It seems like Andrew hasn't posted any covers yet</h3>
+<% end %>
