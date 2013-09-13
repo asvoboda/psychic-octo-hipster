@@ -3,7 +3,7 @@ window.onresize = function() {
 }
 
 //from https://github.com/crispymtn/linear-partition/blob/master/linear_partition.coffee
-function linear_parition(seq, k) {
+var linear_partition = function (seq, k) {
 	var n = seq.length;
 	if (k <= 0) {
 		return [];
@@ -76,14 +76,14 @@ function linear_parition(seq, k) {
 	return ret;
 };
 
-function resize_img($p, ideal_width, ideal_height) {
+var resize_img = function($p, ideal_width, ideal_height) {
 	$p.css({"width": ideal_width, "height": ideal_height});
 }
 
-function galleryify() {
+var galleryify = function() {
 	var $imgs = $("#gallery .picture img");
 	var viewport_width = $("#content").width();
-	var ideal_height = parseInt(($(window).height() - $(".navbar").height()) / 2);
+	var ideal_height = parseInt(($(window).height() - $(".navbar").height()) / 2) - 10;
 	
 	var summed_width = _.reduce($imgs, function (memo, img) {
 		return $(img).width();
