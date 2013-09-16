@@ -84,9 +84,7 @@ var resize_img = function($p, ideal_width, ideal_height) {
 var galleryify = function() {
 	var $imgs = $("#gallery .picture img");
 	var viewport_width = $("#content").width();
-	//var ideal_height = parseInt(($(window).height() - $(".navbar").height()) / 2) - 10;
-	//var ideal_height = (($(window).height() - $(".navbar").height()) / 2) - 500;
-	var ideal_height = 120;
+	var ideal_height = parseInt(($(window).height() - $(".navbar").height()) / 2);
 	
 	var summed_width = _.reduce($imgs, function (memo, img) {
 		return parseFloat($(img).attr("data-original-width")) + memo;
