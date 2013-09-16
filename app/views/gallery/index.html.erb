@@ -1,25 +1,26 @@
 <% provide(:title, 'Gallery') %>
 <div id="gallery">
-	<% @posts.each do |post| %>
+	<% @photos.each do |p| %>
 		<div class="picture"> 
-			<%= image_tag post.photo.url(:large) %>
-		</div>              
-	<% end %>
-	<% @covers.each do |cover| %>
-		<div class="picture"> 
-			<%= image_tag cover.photo.url(:large) %>
+			<%= image_tag p.photo.url(:large) %>
 		</div>              
 	<% end %>	
 </div>
 
 <script>
 	//preprocessing
+	
 	$(document).ready(function() {
-		var $imgs = $("#gallery .picture img");
-		_.each($imgs, function(img) {
-			var $img = $(img);
-			$img.data("aspect-ratio", $img.height()/$img.width());
-		});
-		galleryify();
+		$('#gallery').insertAfter('.navbar');
+		
+		window.onload = function() {
+			var $imgs = $("#gallery .picture img");
+			_.each($imgs, function(img) {
+				$(img).attr("data-aspect-ratio", img.width/img.height);
+				$(img).attr("data-original-height", img.height);
+				$(img).attr("data-original-width", img.width);
+			});
+			galleryify();
+		}
 	});
 </script>
