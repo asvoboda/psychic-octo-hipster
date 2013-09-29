@@ -2,88 +2,106 @@ window.onresize = function() {
     galleryify();
 }
 
-//from https://github.com/crispymtn/linear-partition/blob/master/linear_partition.coffee
-var linear_partition = function (seq, k) {
-	var n = seq.length;
-	if (k <= 0) {
-		return [];
-	}
-	if (k > n) {
-		return _.map(seq, function(x){
-			return [x];
-		});
-	}
-	
-	var table = new Array(n);
-	for (var i = 0; i < n; i++) {
-		table[i] = new Array(k);
-		for(var j = 0; j < k; j ++) {
-			table[i][j] = 0;
-		}
-	}
-	
-	var solution = new Array(n-1);
-	for (var i = 0; i < n-1; i++) {
-		solution[i] = new Array(k-1);
-		for(var j = 0; j < k-1; j ++) {
-			solution[i][j] = 0;
-		}		
-	}
-	
-	for(var i=0; i < n; i++) {
-		var temp = 0;
-		if(i) {
-			temp = table[i-1][0];
-		}
-		table[i][0] = seq[i] + temp;
-	}
-	
-	for(var j=0; j < k; j++) {
-		table[0][j] = seq[0] 
-	}
-	
-	for(var i=1; i < n; i++) {
-		for(var j=1; j < k; j++) {
-			var m;
-			var temp_m = new Array(i);
-			for(var x = 0; x < i; x++) {
-				temp_m[x] = [_.max([table[x][j-1], table[i][0]-table[x][0]]) , x];
-			}
-			m = _.min(temp_m, function(o) {
-				return o[0];
-			});
-			table[i][j] = m[0];
-			solution[i-1][j-1] = m[1];
-		}
-	}
-	
-	n--;
-	k -= 2;
-	var ans = [];
-	while (k >= 0) {
-		temp_ans = new Array(n+1);
-		for(var i = solution[n-1][k]+1; i < n+1; i++) {
-			temp_ans[i] = seq[i];
-		}
-		ans = temp_ans.concat(ans);
-		n = solution[n-1][k];
-		k--;
-	}
-
-	var ret = [];
-	for(var i = 0; i < n+1; i++) {
-		ret.push(seq[i]);
-	}
-	return ret.concat(ans);
-};
+var lin_part_coffee = function (seq, k ) {
+  var ans, i, j, m, n, solution, table, x, y, _i, _j, _k, _l;
+  n = seq.length;
+  if (k <= 0) {
+    return [];
+  }
+  if (k > n) {
+    return seq.map(function(x) {
+      return [x];
+    });
+  }
+  table = (function() {
+    var _i, _results;
+    _results = [];
+    for (y = _i = 0; 0 <= n ? _i < n : _i > n; y = 0 <= n ? ++_i : --_i) {
+      _results.push((function() {
+        var _j, _results1;
+        _results1 = [];
+        for (x = _j = 0; 0 <= k ? _j < k : _j > k; x = 0 <= k ? ++_j : --_j) {
+          _results1.push(0);
+        }
+        return _results1;
+      })());
+    }
+    return _results;
+  })();
+  solution = (function() {
+    var _i, _ref, _results;
+    _results = [];
+    for (y = _i = 0, _ref = n - 1; 0 <= _ref ? _i < _ref : _i > _ref; y = 0 <= _ref ? ++_i : --_i) {
+      _results.push((function() {
+        var _j, _ref1, _results1;
+        _results1 = [];
+        for (x = _j = 0, _ref1 = k - 1; 0 <= _ref1 ? _j < _ref1 : _j > _ref1; x = 0 <= _ref1 ? ++_j : --_j) {
+          _results1.push(0);
+        }
+        return _results1;
+      })());
+    }
+    return _results;
+  })();
+  for (i = _i = 0; 0 <= n ? _i < n : _i > n; i = 0 <= n ? ++_i : --_i) {
+    table[i][0] = seq[i] + (i ? table[i - 1][0] : 0);
+  }
+  for (j = _j = 0; 0 <= k ? _j < k : _j > k; j = 0 <= k ? ++_j : --_j) {
+    table[0][j] = seq[0];
+  }
+  for (i = _k = 1; 1 <= n ? _k < n : _k > n; i = 1 <= n ? ++_k : --_k) {
+    for (j = _l = 1; 1 <= k ? _l < k : _l > k; j = 1 <= k ? ++_l : --_l) {
+      m = _.min((function() {
+        var _m, _results;
+        _results = [];
+        for (x = _m = 0; 0 <= i ? _m < i : _m > i; x = 0 <= i ? ++_m : --_m) {
+          _results.push([_.max([table[x][j - 1], table[i][0] - table[x][0]]), x]);
+        }
+        return _results;
+      })(), function(o) {
+        return o[0];
+      });
+      table[i][j] = m[0];
+      solution[i - 1][j - 1] = m[1];
+    }
+  }
+  n = n - 1;
+  k = k - 2;
+  ans = [];
+  while (k >= 0) {
+    ans = [
+      (function() {
+        var _m, _ref, _ref1, _results;
+        _results = [];
+        for (i = _m = _ref = solution[n - 1][k] + 1, _ref1 = n + 1; _ref <= _ref1 ? _m < _ref1 : _m > _ref1; i = _ref <= _ref1 ? ++_m : --_m) {
+          _results.push(seq[i]);
+        }
+        return _results;
+      })()
+    ].concat(ans);
+    n = solution[n - 1][k];
+    k = k - 1;
+  }
+  return [
+    (function() {
+      var _m, _ref, _results;
+      _results = [];
+      for (i = _m = 0, _ref = n + 1; 0 <= _ref ? _m < _ref : _m > _ref; i = 0 <= _ref ? ++_m : --_m) {
+        _results.push(seq[i]);
+      }
+      return _results;
+    })()
+  ].concat(ans);
+}
 
 var resize_img = function($p, ideal_width, ideal_height) {
-	$p.css({"width": ideal_width, "height": ideal_height});
+	$p.parent().css({"width": Math.floor(ideal_width - 2), "height": Math.floor(ideal_height)});
+	$p.css({"width": Math.floor(ideal_width - 2), "height": Math.floor(ideal_height)});
 }
 
 var galleryify = function() {
 	var $imgs = $("#gallery .picture img");
-	var viewport_width = $("#content").width();
+	var viewport_width = $(window).width();
 	var ideal_height = parseInt(($(window).height() - $(".navbar").height()) / 2);
 	
 	var summed_width = _.reduce($imgs, function (memo, img) {
@@ -91,6 +109,7 @@ var galleryify = function() {
 	}, 0);
 	
 	var rows = Math.round(summed_width / viewport_width);
+	$('#gallery').css({"height": ideal_height * rows});
 	
 	if (rows < 1) {
 		//standard sizing
@@ -106,28 +125,11 @@ var galleryify = function() {
 			return (100 * $img.data("aspectRatio"));
 		});
 		
-		var partition = linear_partition(weights, rows);
-		var arr_partition = [];
-		var new_p = [];
-		var part_index = 0;
-		for(var i =0; i < partition.length; i++) {
-			if(partition[i] !== undefined || partition[i+1] !== undefined) {
-				new_p.push(partition[i]);
-			}
-		}
-		for(var i =0; i < new_p.length; i++) {
-			if (new_p[i]) {
-				if (arr_partition[part_index] === undefined) {
-					arr_partition[part_index] = [];
-				}
-				arr_partition[part_index].push(new_p[i]);
-			} else {
-				part_index++;
-			}
-		}
+		//var partition = linear_partition(weights, rows);
+		var partition = lin_part_coffee(weights, rows);
 		var index = 0;
 		var row_buffer = [];
-		_.each(arr_partition, function(row) {
+		_.each(partition, function(row) {
 			row_buffer = [];
 			_.each(row, function(im) {
 				row_buffer.push($imgs[index++]);
