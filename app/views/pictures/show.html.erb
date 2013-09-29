@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+ 
+<h3><%= @picture.title %></h3>
+    <div class="post_picture"> 
+        <%= image_tag @picture.photo.url(:large) %>
+    </div>
+<br />
+ 
+<%= link_to 'Back to Picture', pictures_path %> | 
+<%= link_to 'edit', edit_picture_path %>

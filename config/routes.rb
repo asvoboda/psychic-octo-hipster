@@ -12,6 +12,7 @@ PsychicOctoHipster::Application.routes.draw do
   match "/places" => "places#index"
   
   resources :covers
+  resources :pictures
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
