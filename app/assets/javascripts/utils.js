@@ -105,7 +105,7 @@ var galleryify = function() {
 	var ideal_height = parseInt(($(window).height() - $(".navbar").height()) / 2);
 	
 	var summed_width = _.reduce($imgs, function (memo, img) {
-		return parseFloat($(img).attr("data-original-width")) + memo;
+		return (parseFloat($(img).attr("data-original-width"))/2) + memo;
 	}, 0);
 	
 	var rows = Math.round(summed_width / viewport_width);
