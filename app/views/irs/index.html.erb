@@ -1,3 +1,13 @@
 <% provide(:title, 'IRS') %>
 
-<h2 class="how-many"><%= @irs %> Days Until IRS!</h2>
+<div class="jumbotron">
+  <div class="container">
+    <h1><%= @irs %> Days Until IRS!</h1>
+	<div class="progress progress-striped">
+	  <div class="progress-bar progress-bar-success" style="width: <%= @pct_complete %>%">
+		<span class="sr-only"><%= @pct_complete %>% Complete (success)</span>
+	  </div>
+	</div>
+  </div>
+</div>
+

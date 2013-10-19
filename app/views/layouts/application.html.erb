@@ -2,11 +2,16 @@
 <html lang="en">
 <head>
     <title>Andrew Svoboda | <%= yield(:title) %></title>
-    <%= stylesheet_link_tag    "bootstrap" %>
-    <%= stylesheet_link_tag    "bootstrap-responsive" %>
+	
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+
     <%= stylesheet_link_tag    "all" %>
-    <%= javascript_include_tag "jquery" %>
-    <%= javascript_include_tag "bootstrap" %>
 	<%= javascript_include_tag "utils" %>
 	
 	<script src="http://d3js.org/d3.v3.min.js"></script>
@@ -40,30 +45,36 @@
 	</script>	
 </head>
 <body>
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<%= link_to "Andrew Svoboda", '/', class: 'navbar-brand' %>
+	  </div>
 
-<div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-        <div class="container">
-            <%= link_to "Andrew Svoboda", '/', class: 'brand' %>
-            <ul class="nav">         
-                <li class="dropdown" id="project-menu">    
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        Projects
-                        <b class="caret"></b>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><%= link_to "Drawroom", 'http://murmuring-oasis-2116.herokuapp.com/' %></li>
-                    </ul>                    
-                </li>
+	  <!-- Collect the nav links, forms, and other content for toggling -->
+	  <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="http://murmuring-oasis-2116.herokuapp.com/">Drawroom</a></li>
+						<li class="divider"></li>
+						<li><a href="#">Action</a></li>
+					</ul>                    
+				</li>
                 <li><%= link_to "Booklist", '/booklist' %></li>
 				<li><%= link_to "Photos", '/gallery' %></li>
                 <li><%= link_to "Github", 'https://github.com/asvoboda' %></li>
                 <li><%= link_to "Blog", '/posts' %></li>
                 <li><%= link_to "Resume", '/resume' %></li>
             </ul>
-        </div>
-    </div>
-</div>
+	  </div>
+	</nav>
 
 <% if content_for(:title) == 'Home' %>
 <div id="cover">

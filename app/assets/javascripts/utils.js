@@ -1,6 +1,6 @@
-window.onresize = function() {
-    galleryify();
-}
+$(window).bind('resize', function () { 
+	galleryify();
+});
 
 var lin_part_coffee = function (seq, k ) {
   var ans, i, j, m, n, solution, table, x, y, _i, _j, _k, _l;
