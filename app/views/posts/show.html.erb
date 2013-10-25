@@ -10,7 +10,7 @@
 			<%= simple_format(@post.content) %>
 		</div>                
 	<% else %>
-		<div class="post_content left">
+		<div class="post_content">
 			<%= simple_format(@post.content) %>
 		</div>   
 	<% end %> 
@@ -52,4 +52,4 @@
  
 <br />
  
-<%= link_to 'Back to Posts', posts_path %>
+<%= link_to 'Back to Posts', posts_path, html_options = {:class => "btn btn-default"} %>

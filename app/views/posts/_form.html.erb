@@ -1,33 +1,42 @@
-<%= form_for(@post) do |f| %>
-  <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+<%= form_for(@post, html: {class: "form form-horizontal"}) do |f| %>
+	<% if @post.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-      <ul>
-      <% @post.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :content %>
-    <%= f.text_area :content %>
-  </div>
-  <div class="field">
-    <%= f.label :photo %>
-    <%= f.file_field :photo %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+			<ul>
+				<% @post.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	<div class="form-group">
+		<%= label(:post, :name, "Name", class: "col-lg-2 control-label") %>
+		<div class="col-lg-2">
+			<%= text_field(:post, :name, class:"form-control") %>
+		</div>
+	</div>
+	<div class="form-group">
+		<%= label(:post, :title, "Title", class: "col-lg-2 control-label") %>
+		<div class="col-lg-6">
+			<%= text_field(:post, :title, class:"form-control") %>
+		</div>
+	</div>  
+	<div class="form-group">
+		<%= label(:post, :content, "Content", class: "col-lg-2 control-label") %>
+		<div class="col-lg-6">
+			<%= text_area(:post, :content, class:"form-control") %>
+		</div>
+	</div>  
+	<div class="form-group">
+		<%= label(:post, :photo, "Photo", class: "col-lg-2 control-label") %>
+		<div class="col-lg-6">
+			<%= file_field(:post, :photo, class:"form-control") %>
+		</div>
+	</div>  
+	<div class="form-group">
+		<div class="col-lg-offset-2 col-lg-10 actions">
+			<%= submit_tag "Create", class: "btn btn-primary" %>
+		</div>
+	</div>  
 <% end %>

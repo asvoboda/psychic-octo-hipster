@@ -2,6 +2,7 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @post %> |
-<%= link_to 'Back', posts_path %>
-<%= button_to 'Destroy', @post, :method => :delete %>
+<%= link_to 'Show', @post, html_options = {:class => "btn btn-default"} %>
+<%= link_to 'Back', posts_path, html_options = {:class => "btn btn-default"} %>
+
+<%= button_to 'Destroy', @post, :method => :delete, :class => "btn btn-danger" %>
