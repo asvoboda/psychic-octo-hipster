@@ -17,9 +17,20 @@
 	padding-top: 40px;
 }
 
+#posts {
+	width: 80%;
+	display: block;
+	margin: 0px auto;
+}
+
 .post {
 	border-bottom-width: 1px;
 	border-bottom-style: dotted;
+}
+
+.post img {
+	margin: 0px auto;
+	display: block;
 }
 
 .post-name {
@@ -30,9 +41,10 @@
 
 }
 
-#post_content{
+.post_content{
 	width: 80%;
 	height: 50%;
+	margin: 15px;
 }
 
 .centre{

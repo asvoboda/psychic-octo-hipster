@@ -6,17 +6,15 @@
 		<div class="post">
 			<div>
 				<h3><%= post.title %></h3>
-				<h5>posted by <%= post.name %> on <%= post.created_at.strftime("%Y-%m-%d")%></h5>
+				<h5><%= post.created_at.strftime("%Y-%m-%d")%></h5>
 			</div>
 			<% if post.photo.url(:large) != "/photos/large/missing.png" %>
-				<div class="post_picture"> 
-					<%= image_tag post.photo.url(:large) %>
-				</div>
+				<%= image_tag(post.photo.url(:large), :class => "img-responsive") %>
 				<div class="post_content">
 					<%= simple_format(post.content) %>
 				</div>                
 			<% else %>
-				<div class="post_content left">
+				<div class="post_content pull-left">
 					<%= simple_format(post.content) %>
 				</div>   
 			<% end %>  
