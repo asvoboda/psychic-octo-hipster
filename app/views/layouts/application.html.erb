@@ -3,8 +3,7 @@
 <head>
     <title>Andrew Svoboda | <%= yield(:title) %></title>
 	
-	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="http://codeorigin.jquery.com/jquery-2.0.3.min.js"></script>
 	
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
@@ -14,17 +13,9 @@
     <%= stylesheet_link_tag    "all" %>
 	<%= javascript_include_tag "utils" %>
 	
-	<script src="http://d3js.org/d3.v3.min.js"></script>
+	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 	<script type='text/javascript' src='https://www.google.com/jsapi'></script>
-	
-	<%= javascript_include_tag "underscore" %>
-	<%= javascript_include_tag "lib/json2" %>
-	<%= javascript_include_tag "lib/lodash" %>
-	<%= javascript_include_tag "lib/miso.events" %>
-	<%= javascript_include_tag "lib/moment" %>
-	<%= javascript_include_tag "lib/underscore.deferred" %>
-	<%= javascript_include_tag "lib/underscore.math" %>
-	<%= javascript_include_tag "miso.ds.0.4.1.js" %>
+	<script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js'></script>
 	
     <%= csrf_meta_tags %>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,7 +36,7 @@
 	</script>	
 </head>
 <body>
-	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<nav id="nav-jn" class="navbar navbar-default navbar-fixed-top" role="navigation">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
 				<span class="sr-only">Toggle navigation</span>

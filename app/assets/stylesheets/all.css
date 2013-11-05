@@ -31,22 +31,11 @@
 .post img {
 	margin: 0px auto;
 	display: block;
-}
-
-.post-name {
-	
-}
-
-.post-title {
-
+	border-radius: 5px;
 }
 
 .post_content{
 	margin: 15px;
-}
-
-.centre{
-	
 }
 
 .iframe-associate{
@@ -104,5 +93,31 @@ text.shadow {
 
 .picture {
 	float: left;
-	margin: 1px 1px 1px 1px;
+	margin: 1px;
 }
+
+#gallery {
+	margin-top: 50px;
+}
+
+.chart {
+	width: 100%;
+}
+
+.chart div div svg {
+	width: 100% !important;
+	height: 100% !important;
+}
+
+.google-visualization-table-table {
+	width: 100% !important;
+}
+
+/* navbar 
+#nav-jn.navbar {
+  background-color: #CFFB78;
+  border-color: #CFFB78;
+  background-image: none;
+  background-repeat: no-repeat;
+  filter: none;
+}*/

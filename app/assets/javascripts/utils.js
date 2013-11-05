@@ -139,6 +139,7 @@ var galleryify = function() {
 				}, 0);
 				_.each(row_buffer, function(img) {
 					var $img = $(img);
+					//resize_img($img, (viewport_width/summed_ratios)*parseFloat($img.attr("data-aspect-ratio")), ideal_height);
 					resize_img($img, (viewport_width/summed_ratios)*parseFloat($img.attr("data-aspect-ratio")), viewport_width/summed_ratios);
 				});
 		});
