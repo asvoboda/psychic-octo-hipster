@@ -1,24 +1,31 @@
-<%= form_for(@picture) do |f| %>
-  <% if @picture.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@picture.errors.count, "error") %> prohibited this picture from being saved:</h2>
+<%= form_for(@picture, html: {class: "form form-horizontal"}) do |f| %>
+	<% if @picture.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(@picture.errors.count, "error") %> prohibited this picture from being saved:</h2>
 
-      <ul>
-      <% @picture.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>  
-  <div class="field">
-    <%= f.label :photo %>
-    <%= f.file_field :photo %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+			<ul>
+				<% @picture.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	<div class="form-group">
+		<%= label(:picture, :title, "Title", class: "col-lg-2 control-label") %>
+		<div class="col-lg-6">
+			<%= text_field(:picture, :title, class:"form-control") %>
+		</div>
+	</div>  
+	<div class="form-group">
+		<%= label(:picture, :photo, "Photo", class: "col-lg-2 control-label") %>
+		<div class="col-lg-6">
+			<%= file_field(:picture, :photo, class:"form-control") %>
+		</div>
+	</div>  
+	<div class="form-group">
+		<div class="col-lg-offset-2 col-lg-10 actions">
+			<%= submit_tag "Create", class: "btn btn-primary" %>
+		</div>
+	</div>  
 <% end %>
+

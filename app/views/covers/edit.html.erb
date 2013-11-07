@@ -1,7 +1,7 @@
-<h1>Editing covers</h1>
+<h1>Editing Cover</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @cover %> |
-<%= link_to 'Back', covers_path %>
-<%= button_to 'Destroy', @cover, :method => :delete %>
+<%= link_to 'Show', @cover, html_options = {:class => "btn btn-default"} %>
+<%= link_to 'Back', covers_path, html_options = {:class => "btn btn-default"} %>
+<%= button_to 'Destroy', @cover, {:method => :delete, :class => "btn btn-danger"} %>

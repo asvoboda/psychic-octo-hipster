@@ -16,40 +16,6 @@
 	<% end %> 
 </div>
  
-<div id="comments">
-<h4>Comments</h4>
-<% @post.comments.each do |comment| %>
-	<div class="comment-name">
-		<strong><%= comment.commenter %></strong>
-	</div>
- 
-	<div class="comment-body">
-		<%= simple_format(comment.body) %>
-	</div>
-<% end %>
-</div>
- 
-<h4>Add a comment:</h4>
-<%= form_for([@post, @post.comments.build], html: {class: "form form-horizontal"}) do |f| %>
-	<div class="form-group">
-		<%= label(:comment, :commenter, "Commenter", class: "col-lg-2 control-label") %>
-		<div class="col-lg-2">
-			<%= text_field(:comment, :commenter, class:"form-control") %>
-		</div>
-	</div>
-	<div class="form-group">
-		<%= label(:comment, :body, "Comment", class: "col-lg-2 control-label") %>
-		<div class="col-lg-6">
-			<%= text_area(:comment, :body, class:"form-control") %>
-		</div>
-	</div>  
-	<div class="form-group">
-		<div class="col-lg-offset-2 col-lg-10 actions">
-			<%= submit_tag "Create", class: "btn btn-primary" %>
-		</div>
-	</div>  
-<% end %>
- 
 <br />
  
-<%= link_to 'Back to Posts', posts_path, html_options = {:class => "btn btn-default"} %>
+<%= link_to 'Back to Posts', posts_path, html_options = {:class => "btn btn-primary"} %>

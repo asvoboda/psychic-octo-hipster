@@ -2,6 +2,6 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @picture %> |
-<%= link_to 'Back', pictures_path %>
+<%= link_to 'Show', @picture, html_options = {:class => "btn btn-default"} %>
+<%= link_to 'Back', pictures_path, html_options = {:class => "btn btn-default"} %>
 <%= button_to 'Destroy', @picture, :method => :delete %>

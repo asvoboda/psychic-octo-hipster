@@ -1,8 +1,6 @@
 PsychicOctoHipster::Application.routes.draw do
 
-  resources :posts do
-    resources :comments
-  end  
+  resources :posts
 
   root :to => "home#index"
   match "/resume" => "resume#index"

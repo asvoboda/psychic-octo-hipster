@@ -5,7 +5,9 @@
 	<% @posts.each do |post| %>
 		<div class="post">
 			<div>
-				<h3><%= post.title %></h3>
+				<%= link_to post do %>
+					<h3><%= post.title %></h3>
+				<% end %>
 				<h5><%= post.created_at.strftime("%Y-%m-%d")%></h5>
 			</div>
 			<% if post.photo.url(:large) != "/photos/large/missing.png" %>
@@ -18,9 +20,6 @@
 					<%= simple_format(post.content) %>
 				</div>   
 			<% end %>  
-			<%= link_to post do %>
-				<span><%= pluralize(post.comments.length, "Comment") %></span>
-			<% end %>
 		</div>
 	<% end %>
 </div>  
