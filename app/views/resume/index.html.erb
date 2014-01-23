@@ -1,290 +1,235 @@
 <% provide(:title, 'Resume') %>
 <head>
-     <title>Andrew Svoboda</title>
-     <style type="text/css">
-		
-        body { 
-            font: 14px;
-            font-family: Helvetica, Sans-Serif;
-            line-height: 24px;
+	<style type="text/css">
+	
+		* {
+			font-weight: 500;
+			font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		}
+
+		body {
+			font: 14px;
+			line-height: 16px;
 			color: #444;
 		}
-		
-        #page-wrap { 
-            margin: 30px auto 30px; 
+
+		#wrap {
+			display: block;
+			margin: auto auto;
+			width: 90%
 		}
-		
+
 		.email {
 			color: #222;
 			text-decoration: none;
-			border-bottom: 1px dotted;
+		}
+
+		.link {
+			color: #222;
+			border-bottom-style: dotted;
+			border-bottom-width: 1px;
+			text-decoration: none;
 		}
 		
-        h1 { 
-            color: #444; 
-            margin: 0 0 16px 0; 
-            padding: 0 0 16px 0; 
-            font-size: 36px; 
-            letter-spacing: -1px; 
-            border-bottom: 1px solid #444; 
+		.link:hover {
+			text-decoration: none;
 		}
-		
-        h2 { 
-            font-size: 18px; 
-            margin: 0 0 6px 0; 
-            position: relative; 
-            color: #848484; 
-		}
-		
-        h2 span { 
-            float: right;
-            padding: 0px 10px 0px 0px;
-            bottom: 0; 
-            right: 0; 
-            font-style: italic; 
-            font-family: Georgia, Serif; 
-            font-size: 14px; 
-            color: #444; 
-            font-weight: normal; 
-		}
-		
-		h3 { 
-            font-size: 16px; 
-            margin 0 0 6px 0;
-            position: relative; 
-            color: #848484; 
-		}
-		
-		h3 span { 
-            float: right; 
-            padding: 0px 10px 0px 0px;
-            bottom: 0; 
-            right: 0; 
-            font-style: italic; 
-            font-family: Georgia, Serif; 
-            font-size: 14px; 
-            color: #444; 
-            font-weight: normal;
-		}
-		
-		h4{
-            font-size: 14px;
-            color:#848484;
-            position: relative;
-			margin: 10px 0 10px 0;
-		}
-		
-		h4 span{
-            float: right;
-            padding: 0px 10px 0px 0px;
-            font-style: italic;
-            right: 0;
-            bottom: 0;
-            font-weight: normal;
-            font-family: Georgia, Serif; 
-		}
-		
+
 		p {
+			font-size: 14px;
 			margin: 5px 0 5px 0;
 		}
 		
 		p strong {
-                color: #666;
+			font-weight: bold;
+		}
+
+		em {
+			font-size: 12px;
+			color: #888;
+			padding: 12px 0 0;
+		}
+
+		ul {
+			margin: 0 0 5px 10px;
+		}
+
+		li {
+			font-size: 14px;
+			line-height: 24px;
 		}
 		
-		em { 
-            font-size: 12px; 
-            color: #888; 
-            padding: 12px 0 0;
+		h4 {
+			margin-bottom: 2px;
 		}
-		
-        ul {
-            margin: 0 0 5px 10px;
-		}
-		
-		.section {
-			overflow: hidden;
-			position: relative;
-		}
-        
-        .section-body {
+
+		.section-body {
 			margin-top: 1.5em;
-            width: 85%; 
-            float: right; 
-            color: #444;
-        }
-        
-        .section-header {
-            color: #777; 
-            font-style: italic; 
-            font-weight: bold; 
-            font-size: 16px; 
-            text-align: right; 
-            width: 9%; 
-            float: left;
-			top: 5px;
-			padding: 0 40px 0 0; 
-			position: absolute;
-			height: 80%;
-        }
-		
-        .clear {
-            clear: both;
-            float: none; 
-            margin-top: 10px;
+			color: #444;
 		}
-     </style>
+
+		.section-header {
+			color: #777;
+			text-align: center;
+		}
+		
+		@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+			#wrap {
+				display: block;
+				margin: auto auto;
+				width: 100%
+			}
+		}
+	</style>
 </head>
 <body>
-    <div id="page-wrap">
-        <div id="contact-info">
-            <h1>Andrew Svoboda</h1>
-			<h2>3B Computer Engineering, University of Waterloo</h2>
-            <div>
-				<a class="email" href="mailto:asvoboda@uwaterloo.ca">asvoboda@uwaterloo.ca</a>
-            </div>
-        </div>
-        <div class="clear"></div>
-        <div>
-            <div class="clear"></div>
+	<div id="wrap">
+		<div id="contact-info">
+			<h1>Andrew Svoboda</h1>
+			<h2>University of Waterloo <br/>3B Computer Engineering</h2>
+			<div>
+				<a class="link" href="mailto:asvoboda@uwaterloo.ca">asvoboda@uwaterloo.ca</a>
+				<br>
+				<a class="link" href="http://www.andrewsvoboda.me">www.andrewsvoboda.me</a>
+			</div>
+		</div>
+		<div>
 			<div class="section">
-				<div class="section-header">Highlights</div>
+				<h2 class="section-header">Highlights</h2>
 				<div class="section-body">
-					<h2>Core Skills</h2>
+					<h3>Core Skills</h3>
 					<ul>
 						<li>Proficient in Python, Java, C, R (Experienced in others)</li>
-						<li>Well versed in back end web frameworks such as Django, Spring and Rails</li>
-						<li>Experienced in web design using Javascript (jQuery, Backbone, Underscore), Sass</li>
-						<li>Ample Experience contributing to and debugging large scale software systems</li>
-						<li>Solid understanding and fundamentals of git</li>
+						<li>Well versed using web frameworks such as Django, Spring, and Rails</li>
+						<li>Academic experience building embedded (VHDL, C, 68k Assembly) and application software (Java, C#) </li>
+						<li>Industry experience in web design using Javascript (jQuery, Underscore, Backbone); CSS (Sass, Less); and HTML</li>
+						<li>Solid understanding of the fundamentals of git and hg</li>
 						<li>Proficienct with Unix and Linux based operating systems</li>
 					</ul>
-					<h2>Strong Soft Skills</h2>
+					<h3>Strong Soft Skills</h3>
 					<ul>
 						<li>Passionate about learning - many skills are self taught and reflect a desire for understanding and further personal development</li>
 						<li>Strong ability to quickly learn, adapt, and gain proficiency in new technologies</li>
-					</ul>	
+						<li>Consistently recieved highest Waterloo performance ratings while being described as an excellent communicator and gregarious</li>
+					</ul>
 				</div>
 			</div>
-            <div class="clear"></div>
 			<div class="section" >
-				<div class="section-header">Professional</div>			
+				<h2 class="section-header">Professional</h2>
 				<div class="section-body">
-					<h2>Kontagent, San Francisco CA <span> Software Engineer, Jan - Apr 2013 </span></h2>
+					<p><strong>Serious Software Engineer</strong>, <a class="link" href="https://www.workmarket.com/">Work Market</a>, New York NY, Sept - Dec 2013</p>
 					<div>
-						<em><strong>Evaluation: Oustanding</strong><br>
-							'Andrew distinguished himself [as] a key member of the team who contributed to the Kontagent codebase at a professional level, implementing core features with minimal supervision'</em>
+						<em><strong>Evaluation: Oustanding</strong></em>
 						<ul>
-							<li>Contributed to and designed two major features: sharing dashboard items amongst users and notifications across a new product</li>
-							<li>Took a leadership role in the development group and assumed responsibility for key features and maintenance in Python</li>
+							<li>Created infrastucture for push notifications on the backend (Spring) system, as well as adding push notifications to the Android and iOS clients</li>
+							<li>Actively maintained the platform, fixing numerous bugs and issues while pushing new features to production daily</li>
+							<li>Helped upgrade internal infrastructure for monitoring by configuring and installing New Relic and Sentry across the application, along with some customised tracing</li>
 						</ul>
 					</div>
-				</div> 				
+				</div>
 				<div class="section-body">
-					<h2>Kontagent, Toronto ON <span> Software Engineer, May - Aug 2012 </span></h2>
+					<p><strong>Software Engineer</strong>, <a class="link" href="http://www.kontagent.com/">Kontagent</a>, San Francisco CA, Jan - Apr 2013</p>
 					<div>
-						<em><strong>Evaluation: Oustanding</strong><br>
-							'[Andrew] is very interested in, and takes pride in his work. [He] is adept at solving problems and is reliable in any situation. [He] works well with associates and was seen as an asset to the team.'</em>
+						<em><strong>Evaluation: Oustanding</strong></em>
+						<ul>
+							<li>Contributed heavily to two major customer facing projects (Cohort Analysis, Datamine) from software design to implementation to maintenance in production</li>
+							<li>Built a sharing system for users on the datamine product to seemlessly share HQL Queries within the product easily, along with notifications</li>
+							<li>Took a leadership role in the development group and assumed responsibility for key features and maintenance</li>
+						</ul>
+					</div>
+				</div>
+				<div class="section-body">
+					<p><strong>Software Engineer</strong>, <a class="link" href="http://www.kontagent.com/">Kontagent</a>, Toronto ON, May - Aug 2012</p>
+					<div>
+						<em><strong>Evaluation: Oustanding</strong></em>
 						<ul>
 							<li>Created behaviourally targeted user notification service using Drools (Java based rule engine) to allow Product and Support teams to directly connect with users on the Dashboard product</li>
-							<li>Contributed to building out and debugging a new partner provisioning API in Python from ground up</li>
+							<li>Contributed to building out and debugging a new partner provisioning API from ground up</li>
 							<li>Performed production evolution duties on Javascript and Python (Django) related bugs occuring on the customer facing Dashboard product</li>
 						</ul>
 					</div>
-				</div>            
+				</div>
 				<div class="section-body">
-					<h2>RedIron Tech., London ON <span> Software Developer, Sep - Dec 2011 </span></h2>
+					<p><strong>Software Developer</strong>, <a class="link" href="http://www.redirontech.com/">RedIron Tech.</a>, London ON, Sep - Dec 2011</p>
 					<div>
-						<em><strong>Evaluation: Excellent</strong><br>
-							'[Andrew's] areas of strength include: Open to ideas/feedback; Ability to learn; Problem solving. [..] [He] had very good interpersonal skills and cooperated well with everyone in the office.'</em>
+						<em><strong>Evaluation: Excellent</strong></em>
 						<ul>
 							<li>Designed and implemented an automated build deployment server and web interface using PHP, Javascript (jQuery) to easily deploy products to QA and Customers</li>
-							<li>Created a build server and web interface using Django and a Cherrypy server to remote start a custom WiX build process of a selected product</li>
-							<li>Worked on enhancment of core product in C#, creating DLLs to plug into point-of-sale software</li>
+							<li>Created a build server and web interface using Django and a cherrypy server to remote begin a custom WiX build process of a selected product</li>
+							<li>Worked on core product with other team members to further enhance the functionality of the product according to customer specifications</li>
 						</ul>
 					</div>
 				</div>
 				<div class="section-body">
-					<h2>Nuance Communications, Montreal QC <span> Data Analyst, Jan - Apr 2011</span></h2>
+					<p><strong>Data Analyst</strong>, <a class="link" href="http://www.nuance.com/index.htm">Nuance Communications</a>, Montreal QC, Jan - Apr 2011</p>
 					<div>
-						<em><strong>Evaluation: Outstanding</strong><br>
-							'Andrew is exceptionally bright and a quick learner. He was very productive and consistently did things faster than anticipated. [..] When offered constructive criticism of his work, he always took it well and quickly returned a new version that addressed the concerns.'</em>
+						<em><strong>Evaluation: Outstanding</strong></em>
 						<ul>
-							<li>Processed and analyzed large amounts of data in visually and interactively intuitive manners in R</li>
-							<li>Analyzed logged call data in order to understand trends and help enrich applications and technology to further automate future processing in Python</li>
+							<li>Processed and analyzed large amounts of data in visually and interactively intuitive manners</li>
+							<li>Analyzed logged call data in order to understand trends and help enrich applications and technology to further automate future processing</li>
+							<li>Attended to and completed various complicated side projects to meet a surprise deadivine thrust upon the team </li>
 						</ul>
 					</div>
 				</div>
 			</div>
-			<div class="clear" style="page-break-after:always"></div>
 			<div class="section" >
-				<div class="section-header">Projects</div>
+				<h2 class="section-header">Projects</h2>
 				<div class="section-body">
-					<h2>VHDL Kirsch Edge Detector</h2>
+					<h4>MSP Launchpad Touchpanel</h4>
 					<ul>
-						<li>Written as a project for ECE 327 on an FPGA in VHDL</li>
-						<li>Implementation of three rotating 256 byte memory arrays to calculate the existence and direction of edges in an image</li>
-						<li>Constrained hardware area and maximised clock speed, with a maximum latency of 8 cycles to calculate edges</li>						
+						<li>Utilised TI MSP430G Launchpad with capacitive touchpanel for curiosity</li>
+						<li>LED feedback when scrolling a circular capacitive touchpad, using C and MSP libraries</li>
 					</ul>
-					<h2>x86 Generator and Shared Library Execution in Java</h2>
+					<h4>RTOS Labs</h4>
 					<ul>
-						<li>Written as a bonus project for ECE 351</li>
-						<li>Wrote an x86 generator in Java to convert a subset of VHDL to x86</li>
-						<li>The assembled x86 was linked into DLLs and were inserted via the JNI into runtime for execution and testing</li>						
-					</ul>						
-					<h2>MSP Launchpad Touchpanel</h2>
-					<ul>
-						<li>MSP430G Launchpad with capacitive touchpanel for curiosity</li>
-						<li>LED feedback for wheel-like scrolling in C</li>
+						<li>Written as a project for ECE 254</li>
+						<li>Utilised Mutex, Semaphores, shared memory and message passing to avoid deadlock and starvation issues</li>
+						<li>Created multithreaded and multiple process programs on Linux and Keil (ARM) Real Time Systems</li>
 					</ul>
-					<h2>Assembly Calculator in Motorola 68K</h2>
+					<h4>Assembly Calculator</h4>
 					<ul>
 						<li>Written as a project for ECE 222</li>
-						<li>Created a calculator from scratch in 68K Assembly, with the ability to respond to hardware keypresses and keyboard input</li>
-					</ul>             
+						<li>Created a calculator from scratch in Motorola 68K Assembly, with the ability to respond to hardware keypresses and keyboard input</li>
+                        <li>Created a 'system clock' based on interrupts to fir every second, with pause/reset/reprogram/start functionality</li>
+					</ul>
+					<h4>Game of World Domination</h4>
+					<ul>
+						<li>Written as a project for Grade 12 Computer Science</li>
+						<li>Designed and created a game of Risk with a partner, complete with a GUI, sound, and multiple human players in Java</li>
+					</ul>
 				</div>
 			</div>
-			<div class="clear"></div>
 			<div class="section">
-				<div class="section-header">Education</div>
+				<h2 class="section-header">Education</h2>
 				<div class="section-body">
-					<h2>University of Waterloo, Waterloo ON<span> Sep 2010 - Present</span></h2>
+					<h3>University of Waterloo, Waterloo ON, Sep 2010 - Present</h3>
 					<div>
 						<p><strong>Major:</strong> Honours Computer Engineering</p>
-						<p><strong>Relevant Courses: </strong>Operating Systems, Compilers, Digital Computers, Embedded Systems Programming</p>
-						<h4>Academic ECE Class 2015 Representative<span>Sept 2012 - Present</span></h4>
+						<p><strong>Relevant Courses: </strong>Operating Systems, Digital Computers, Embedded Systems Programming</p>
+						<h4>Academic ECE Class 2015 Representative, Sept 2012 - Present</h4>
 						<ul>
-							<li>Meet with Professors, lab instructors and TAs to discuss and solve class issues</li>
+							<li>Meet with Professors, lab instructors and TAs monthly to discuss and solve class issues</li>
 						</ul>
-						<h4>Engineering Society ECE Class 2015 Representative<span>Sep 2010 - Present</span></h4>
+						<h4>Engineering Society ECE Class 2015 Representative, Sep 2010 - Present</h4>
 						<ul>
 							<li>Attend all bi-weekly Engineering Society meetings and represent class when voting on policy amendments</li>
-							<li>Maintain a link between the class and the executive,  making sure the class is informed of upcoming events and policy</li>
-						</ul>
-					</div>
-					<h2>Centennial C.V.I., Guelph ON <span> Sep 2007 - Jun 2010</span></h2>
-					<div>
-						<h4>Waterloo-Wellington Science & Engineering Fair Project<span> Nov 2009 - Apr 2010</span></h4>
-						<ul>
-							<li>Researched and conducted trials synthesizing commercially viable Ferofluids in the University of Guelph Nanoscience Labs</li>
-							<li>Achieved Gold Medal Standard</li>
+							<li>Maintain a link between the ECE Class of 2015 and the executive, as well making sure the class is informed of upcoming events and policy changes</li>
 						</ul>
 					</div>
 				</div>
 			</div>
-			<div class="clear"></div>
 			<div class="section">
-				<div class="section-header">Hobbies</div>
+				<h2 class="section-header">Hobbies</h2>
 				<div class="section-body">
 					<ul>
 						<li>Baking Bread (Ciabatta, Marbled Rye, Sourdough!)</li>
+						<li>Coding and Breaking Things</li>
 						<li>Murder Most Foul; Reading</li>
-						<li>Drawing and Painting; Analog Photography &  Film Development</li>
+						<li>Drawing and Painting; Analog Photography & Film Development</li>
 						<li>Canadian History</li>
 					</ul>
 				</div>
 			</div>
-            <div class="clear"></div>
-        </div>
-    </div>
+		</div>
+	</div>
 </body>
