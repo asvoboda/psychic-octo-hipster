@@ -1,3 +1,8 @@
+* {
+	font-weight: 500;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
 #cover {
 	height: 100%;
 	width: 100%;
@@ -97,7 +102,7 @@ text.shadow {
 }
 
 #gallery {
-	margin-top: 50px;
+	margin-top: 46px;
 }
 
 .chart {
@@ -112,12 +117,3 @@ text.shadow {
 .google-visualization-table-table {
 	width: 100% !important;
 }
-
-/* navbar 
-#nav-jn.navbar {
-  background-color: #CFFB78;
-  border-color: #CFFB78;
-  background-image: none;
-  background-repeat: no-repeat;
-  filter: none;
-}*/
