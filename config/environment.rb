@@ -22,3 +22,13 @@ if File.exists?(Rails.root.join('config','s3.yml'))
     ENV['secret_access_key'] = S3_CONFIG[:secret_access_key]
     ENV['access_key_id'] = S3_CONFIG[:access_key_id]
 end
+
+ActionMailer::Base.smtp_settings = {
+  :address        => 'smtpout.secureserver.net',
+  :port           => '3535',
+  :authentication => :plain,
+  :user_name      => ENV['email_user'],
+  :password       => ENV['email_pass'],
+  :domain         => 'andrewsvoboda.me',
+  :enable_starttls_auto => true
+}
