@@ -6,4 +6,9 @@ class UserMailer < ActionMailer::Base
 	@commenter = commenter
 	mail(to: "svoboda.andrew@gmail.com", subject: "blog comment")
   end
+  
+  def irs_email(irs)
+    @irs = irs
+    mail(to: "svoboda.andrew@gmail.com", subject: "IMPORTANT: IRS COUNTDOWN")
+  end
 end
