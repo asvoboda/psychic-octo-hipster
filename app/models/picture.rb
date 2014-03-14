@@ -6,13 +6,7 @@ class Picture < ActiveRecord::Base
 	:medium => "300x300", 
 	:thumb => "100x100",
 	},
-	:storage => :s3,
-	:path => "picture/:attachment/:style/:id.:extension",
-	:bucket => 'media.andrewsvoboda.me',
-	:s3_credentials => {
-		:secret_access_key => ENV['secret_access_key'],
-		:access_key_id => ENV['access_key_id']
-	}
-	
+	:path => "picture/:attachment/:style/:id.:extension"
+
   validates :title, :presence => true
 end

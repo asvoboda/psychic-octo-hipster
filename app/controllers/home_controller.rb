@@ -1,7 +1,8 @@
 class HomeController < ApplicationController
   def index
-	@covers = Cover.all(:order => "created_at DESC")
-	@cover = @covers.sample
+    @ids = Cover.ids
+	@id = @ids.sample
+    @cover = Cover.find(@id)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @cover }

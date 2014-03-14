@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
+ruby '2.0.0'
 
-gem 'rails', '3.2.6'
+gem 'rails', '4.0.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -18,11 +19,11 @@ group :assets do
   #gem 'less'
 end
 
+gem 'protected_attributes'
 gem 'newrelic_rpm'
 
-gem 'paperclip', '3.4.2'
+gem 'paperclip'
 
-gem "aws-s3", :require => "aws/s3"
 gem 'aws-sdk'
 
 gem 'bartt-ssl_requirement', '~>1.4.0', :require => 'ssl_requirement'

@@ -60,9 +60,15 @@ PsychicOctoHipster::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
-
-  # Log the query plan for queries taking more than this (works
-  # with SQLite, MySQL, and PostgreSQL)
-  # config.active_record.auto_explain_threshold_in_seconds = 0.5
+  
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_protocol => 'http',
+    :s3_credentials => {
+      :bucket => 'media.andrewsvoboda.me',
+      :access_key_id => ENV['access_key_id'],
+      :secret_access_key => ENV['secret_access_key']
+    }
+  }
   
 end
