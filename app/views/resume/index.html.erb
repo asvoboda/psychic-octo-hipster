@@ -1,5 +1,6 @@
 <% provide(:title, 'Resume') %>
 <head>
+	<title>Andrew Svoboda</title>
 	<style type="text/css">
 	
 		* {
@@ -16,7 +17,7 @@
 		#wrap {
 			display: block;
 			margin: auto auto;
-			width: 90%
+			width: 60%
 		}
 
 		.email {
@@ -88,7 +89,9 @@
 			<h1>Andrew Svoboda</h1>
 			<h2>University of Waterloo <br/>3B Computer Engineering</h2>
 			<div>
-				<a class="link" href="mailto:asvoboda@uwaterloo.ca">asvoboda@uwaterloo.ca</a>
+				<a class="email" href="mailto:asvoboda@uwaterloo.ca">asvoboda@uwaterloo.ca</a>
+				<br>
+				<a class="email" href="http://www.andrewsvoboda.me">www.andrewsvoboda.me</a>
 			</div>
 		</div>
 		<div>
@@ -97,18 +100,23 @@
 				<div class="section-body">
 					<h3>Core Skills</h3>
 					<ul>
-						<li>Proficient in Python, Java, C, R (Experienced in others)</li>
-						<li>Well versed using web frameworks such as Django, Spring, and Rails</li>
+						<li>Proficient in Python, C/C++, Java, R (Experienced in others)</li>
 						<li>Academic experience building embedded (VHDL, C, 68k Assembly) and application software (Java, C#) </li>
-						<li>Industry experience in web design using Javascript (jQuery, Underscore, Backbone); CSS (Sass, Less); and HTML</li>
-						<li>Solid understanding of the fundamentals of git and hg</li>
+						<li>Solid understanding of the fundamentals of git</li>
 						<li>Proficienct with Unix and Linux based operating systems</li>
+						<li>Proficient understanding of relational database design principles and SQL syntax</li>
+					</ul>
+					<h3>Personal Objectives</h3>
+					<ul>
+						<li>Reinforce and continue to develop high quality Software and Hardware Engineering skills</li>
+						<li>Work on technically challenging and rewarding projects</li>
 					</ul>
 					<h3>Strong Soft Skills</h3>
 					<ul>
 						<li>Passionate about learning - many skills are self taught and reflect a desire for understanding and further personal development</li>
+						<li>Driven worker with strong work ethic, hard working in both independent and team-based scenarios</li>
 						<li>Strong ability to quickly learn, adapt, and gain proficiency in new technologies</li>
-						<li>Consistently recieved highest Waterloo performance ratings while being described as an excellent communicator, hard working, and gregarious</li>
+						<li>Consistently recieved highest Waterloo Co-op performance ratings while being described as an excellent communicator</li>
 					</ul>
 				</div>
 			</div>
@@ -173,28 +181,47 @@
 			<div class="section" >
 				<h2 class="section-header">Projects</h2>
 				<div class="section-body">
+					<h4>Network Protocol Labs for ECE 358</h4>
+					<ul>
+						<li>Simulated retransmission (ACK, GBN) protocols in C, and investigated performance based on select metrics</li>
+						<li>Simulated discrete event simulators for single buffered queues across network channels in C</li>
+					</ul>
+					<h4>Image Manipulation Project for ECE 327</h4>
+					<ul>
+						<li>Synthesise the Kirsch edge detection algortihm for a Cyclone II FPGA using VHDL</li>
+						<li>Analyse performance of circuit using timing diagrams from simulations</li>
+						<li>Optimise FPGA design for both area and speed</li>
+					</ul>
+					<h4>Compiler Labs for ECE 351</h4>
+					<ul>
+						<li>Implement a compiler for a subset of VHDL using Java</li>
+						<li>Designed tools for recognising, parsing, simplifying and optimising input statments</li>
+					</ul>
+					<h4>Database Systems Project for ECE 356</h4>
+					<ul>
+						<li>Implemented a RDBMS in Java for a Hospital system using Spring, JDBC (without Hibernate) for MySQL</li>
+					</ul>
 					<h4>MSP Launchpad Touchpanel</h4>
 					<ul>
-						<li>Utilised TI MSP430G Launchpad with capacitive touchpanel for curiosity</li>
-						<li>LED feedback when scrolling a circular capacitive touchpad, using C and MSP libraries</li>
+						<li>Utilised TI MSP430G Launchpad with capacitive touchpanel as a hobby project</li>
+						<li>LED feedback when scrolling a circular capacitive touchpad, using C and provided MSP libraries</li>
 					</ul>
-					<h4>RTOS Labs</h4>
+					<h4>OS Labs for ECE 254</h4>
 					<ul>
-						<li>Written as a project for ECE 254</li>
 						<li>Utilised Mutex, Semaphores, shared memory and message passing to avoid deadlock and starvation issues</li>
 						<li>Created multithreaded and multiple process programs on Linux and Keil (ARM) Real Time Systems</li>
 					</ul>
-					<h4>Assembly Calculator</h4>
+					<h4>OS Labs for ECE 224</h4>
 					<ul>
-						<li>Written as a project for ECE 222</li>
-						<li>Created a calculator from scratch in Motorola 68K Assembly, with the ability to respond to hardware keypresses and keyboard input</li>
-                        <li>Created a 'system clock' based on interrupts to fir every second, with pause/reset/reprogram/start functionality</li>
+						<li>Wrote audio player in C to retrieve and playback WAV files from an SD card for the Cyclone II board</li>
 					</ul>
-					<h4>Game of World Domination</h4>
+					<h4>Assembly Calculator for ECE 222</h4>
 					<ul>
-						<li>Written as a project for Grade 12 Computer Science</li>
-						<li>Designed and created a game of Risk with a partner, complete with a GUI, sound, and multiple human players in Java</li>
+						<li>Created a calculator and timer from scratch in Motorola 68K Assembly, with the ability to respond to hardware keypresses and keyboard input</li>
+                        <li>Created a 'system clock' based on interrupts to fire every second, with pause/reset/reprogram/start functionality</li>
+                        <li>Investigated synchronisaion techniques by handling hardware keypad input using UART protocol</li>
 					</ul>
+
 				</div>
 			</div>
 			<div class="section">
@@ -231,3 +258,4 @@
 		</div>
 	</div>
 </body>
+
