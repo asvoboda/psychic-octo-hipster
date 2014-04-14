@@ -2,7 +2,7 @@
 
 <div class="jumbotron">
   <div class="container">
-    <h1><%= @irs %> Days Until IRS!</h1>
+    <h1><%= @irs %> <%= "Day".pluralize(@irs) %> Until IRS!</h1>
 	<div class="progress progress-striped">
 	  <div class="progress-bar progress-bar-success" style="width: <%= @pct_complete %>%">
 		<span class="sr-only"><%= @pct_complete %>% Complete (success)</span>
