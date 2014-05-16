@@ -4,20 +4,20 @@
 	<style type="text/css">
 	
 		* {
-			font-weight: 500;
-			font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+			font-weight: 300;
+			font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 		}
 
 		body {
-			font: 14px;
-			line-height: 16px;
+			font: 12px;
+			line-height: 14px;
 			color: #444;
 		}
 
 		#wrap {
 			display: block;
 			margin: auto auto;
-			width: 90%
+			width: 80%
 		}
 
 		.email {
@@ -36,15 +36,6 @@
 			text-decoration: none;
 		}
 
-		p {
-			font-size: 14px;
-			margin: 5px 0 5px 0;
-		}
-		
-		p strong {
-			font-weight: bold;
-		}
-
 		em {
 			font-size: 12px;
 			color: #888;
@@ -59,19 +50,59 @@
 			font-size: 14px;
 			line-height: 24px;
 		}
-		
-		h4 {
+
+		h1 {
+			font-size: 30px;
+		}
+
+		h2 {
+			font-size: 24px;
 			margin-bottom: 2px;
 		}
 
+		h3 {
+			font-size: 16px;
+			margin-bottom: 0;
+		}
+
+		h4 {
+			font-size: 14px;
+			margin: 5px 0 5px 0;
+		}
+
+		h4 strong {
+			font-weight: bold;
+		}
+
+		.notop {
+			margin-top: 0.2em;
+		}
+
 		.section-body {
-			margin-top: 1.5em;
+			margin-top: 1em;
 			color: #444;
 		}
 
 		.section-header {
 			color: #777;
 			text-align: center;
+		}
+
+		.table {
+			width: 100%;
+			display: table;
+		}
+
+		.tr {
+			display: table-row;
+		}
+
+		.tc {
+			display: table-cell;
+		}
+
+		.right-align {
+			text-align: right;
 		}
 		
 		@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
@@ -85,13 +116,18 @@
 </head>
 <body>
 	<div id="wrap">
-		<div id="contact-info">
-			<h1>Andrew Svoboda</h1>
-			<h2>University of Waterloo <br/>3B Computer Engineering</h2>
-			<div>
-				<a class="email" href="mailto:asvoboda@uwaterloo.ca">asvoboda@uwaterloo.ca</a>
-				<br>
-				<a class="email" href="http://www.andrewsvoboda.me">www.andrewsvoboda.me</a>
+		<h1>Andrew Svoboda</h1>
+		<div class="table">
+			<div class="tr">
+				<div class="tc">
+					<h2>University of Waterloo</h2>
+					<h2 class="notop">4A Computer Engineering</h2>
+				</div>
+				<div class="tc right-align">
+					<a class="email" href="mailto:asvoboda@uwaterloo.ca">asvoboda@uwaterloo.ca</a>
+					<br>
+					<a class="email" href="http://www.andrewsvoboda.me">www.andrewsvoboda.me</a>
+				</div>
 			</div>
 		</div>
 		<div>
@@ -103,12 +139,14 @@
 						<li>Proficient in Python, C/C++, Java, R (Experienced in others)</li>
 						<li>Academic experience building embedded (VHDL, C, 68k Assembly) and application software (Java, C#) </li>
 						<li>Solid understanding of the fundamentals of git</li>
-						<li>Proficienct with Unix and Linux based operating systems</li>
+						<li>Proficient with Unix and Linux based operating systems</li>
 						<li>Proficient understanding of relational database design principles and SQL syntax</li>
 					</ul>
 					<h3>Personal Objectives</h3>
 					<ul>
-						<li>Reinforce and continue to develop high quality Software and Hardware Engineering skills</li>
+						<li>Develop and improve hardware/firmware skills, practice more low level programming</li>
+						<li>Gain additional experience with high level software systems and backend databases</li>
+						<li>Reinforce and continue to develop high quality Software and Embedded Engineering skills</li>
 						<li>Work on technically challenging and rewarding projects</li>
 					</ul>
 					<h3>Strong Soft Skills</h3>
@@ -116,47 +154,47 @@
 						<li>Passionate about learning - many skills are self taught and reflect a desire for understanding and further personal development</li>
 						<li>Driven worker with strong work ethic, hard working in both independent and team-based scenarios</li>
 						<li>Strong ability to quickly learn, adapt, and gain proficiency in new technologies</li>
-						<li>Consistently recieved highest Waterloo Co-op performance ratings while being described as an excellent communicator</li>
+						<li>Consistently received highest Waterloo Co-op performance ratings while being described as an excellent communicator</li>
 					</ul>
 				</div>
 			</div>
 			<div class="section" >
 				<h2 class="section-header">Professional</h2>
 				<div class="section-body">
-					<p><strong>Serious Software Engineer</strong>, <a class="link" href="https://www.workmarket.com/">Work Market</a>, New York NY, Sept - Dec 2013</p>
+					<h4><strong>Serious Software Engineer</strong>, <a class="link" href="https://www.workmarket.com/">Work Market</a>, New York NY, Sept - Dec 2013</h4>
 					<div>
-						<em><strong>Evaluation: Oustanding</strong></em>
+						<em><strong>Evaluation: Outstanding</strong></em>
 						<ul>
-                            <li>Actively maintained the platform, fixing numerous bugs and issues while pushing new features to production on a daily basis</li>
-							<li>Created and implemented infrastucture for push notifications on the backend (Spring, ActiveMQ) system, as well as adding push notifications to the Android and iOS clients</li>
-							<li>Upgraded internal infrastructure for monitoring by configuring and installing New Relic (monitoring Java) and Sentry (monitoring JS) across the application, along with some customised tracing in New Relic to montior ActiveMQ levels</li>
+							<li>Created infrastructure for push notifications on the backend (Spring) system, as well as adding push notifications to the Android and iOS clients</li>
+							<li>Actively maintained the platform, fixing numerous bugs and issues while pushing new features to production daily</li>
+							<li>Helped upgrade internal infrastructure for monitoring by configuring and installing New Relic and Sentry across the application, along with some customised tracing</li>
 						</ul>
 					</div>
 				</div>
 				<div class="section-body">
-					<p><strong>Software Engineer</strong>, <a class="link" href="http://www.kontagent.com/">Kontagent</a>, San Francisco CA, Jan - Apr 2013</p>
+					<h4><strong>Software Engineer</strong>, <a class="link" href="http://www.kontagent.com/">Kontagent</a>, San Francisco CA, Jan - Apr 2013</h4>
 					<div>
-						<em><strong>Evaluation: Oustanding</strong></em>
+						<em><strong>Evaluation: Outstanding</strong></em>
 						<ul>
 							<li>Contributed heavily to two major customer facing projects (Cohort Analysis, Datamine) from software design to implementation to maintenance in production</li>
-							<li>Built a sharing system for users on the datamine product to seemlessly share HQL Queries within the product easily, along with notifications</li>
-							<li>Took a leadership role in the development group and assumed responsibility for building key features and maintenance</li>
+							<li>Built a sharing system for users on the datamine product to seamlessly share HQL Queries within the product easily, along with notifications</li>
+							<li>Took a leadership role in the development group and assumed responsibility for key features and maintenance</li>
 						</ul>
 					</div>
 				</div>
 				<div class="section-body">
-					<p><strong>Software Engineer</strong>, <a class="link" href="http://www.kontagent.com/">Kontagent</a>, Toronto ON, May - Aug 2012</p>
+					<h4><strong>Software Engineer</strong>, <a class="link" href="http://www.kontagent.com/">Kontagent</a>, Toronto ON, May - Aug 2012</h4>
 					<div>
-						<em><strong>Evaluation: Oustanding</strong></em>
+						<em><strong>Evaluation: Outstanding</strong></em>
 						<ul>
 							<li>Created behaviourally targeted user notification service using Drools (Java based rule engine) to allow Product and Support teams to directly connect with users on the Dashboard product</li>
 							<li>Contributed to building out and debugging a new partner provisioning API from ground up</li>
-							<li>Performed production evolution duties on Javascript and Python (Django) related bugs occuring on the customer facing Dashboard product</li>
+							<li>Performed production evolution duties on Javascript and Python (Django) related bugs occurring on the customer facing Dashboard product</li>
 						</ul>
 					</div>
 				</div>
 				<div class="section-body">
-					<p><strong>Software Developer</strong>, <a class="link" href="http://www.redirontech.com/">RedIron Tech.</a>, London ON, Sep - Dec 2011</p>
+					<h4><strong>Software Developer</strong>, <a class="link" href="http://www.redirontech.com/">RedIron Tech.</a>, London ON, Sep - Dec 2011</h4>
 					<div>
 						<em><strong>Evaluation: Excellent</strong></em>
 						<ul>
@@ -166,68 +204,43 @@
 						</ul>
 					</div>
 				</div>
-				<div class="section-body">
-					<p><strong>Data Analyst</strong>, <a class="link" href="http://www.nuance.com/index.htm">Nuance Communications</a>, Montreal QC, Jan - Apr 2011</p>
-					<div>
-						<em><strong>Evaluation: Outstanding</strong></em>
-						<ul>
-							<li>Processed and analyzed large amounts of data in visually and interactively intuitive manners</li>
-							<li>Analyzed logged call data in order to understand trends and help enrich applications and technology to further automate future processing</li>
-							<li>Attended to and completed various complicated side projects to meet a surprise deadivine thrust upon the team </li>
-						</ul>
-					</div>
-				</div>
 			</div>
 			<div class="section" >
 				<h2 class="section-header">Projects</h2>
 				<div class="section-body">
 					<h4>Network Protocol Labs for ECE 358</h4>
 					<ul>
-						<li>Simulated retransmission (ACK, GBN) protocols in C, and investigated performance based on select metrics</li>
+						<li>Simulated Stop-And-Wait and Go-Back-N ARQ protocols in C, and investigated performance based on selected metrics such as buffer size and sliding window size</li>
 						<li>Simulated discrete event simulators for single buffered queues across network channels in C</li>
 					</ul>
 					<h4>Image Manipulation Project for ECE 327</h4>
 					<ul>
-						<li>Synthesise the Kirsch edge detection algortihm for a Cyclone II FPGA using VHDL</li>
-						<li>Analyse performance of circuit using timing diagrams from simulations</li>
-						<li>Optimise FPGA design for both area and speed</li>
+						<li>Synthesised an implementation of the Kirsch edge detection algorithm for a Cyclone II FPGA using VHDL</li>
+						<li>Analysed performance of circuit using timing diagrams from simulations</li>
+						<li>Optimised FPGA design for both area and speed after the initial dataflow diagram</li>
+					</ul>
+					<h4>Question Period Statement Analyzer</h4>
+					<ul>
+						<li>Python web application integrated with AlchemyAPI to determine statement intent using Natural Language Processing</li>
+						<li>Database of different MPs and quotations created by scraping data from the House of Commons question period catalogue using a Python based web scraper utilising Mechanize and BeautifulSoup for automated parsing and collection</li>
 					</ul>
 					<h4>Multiplayer Roguelike</h4>
 					<ul>
-						<li>Node.js (with Socket.io and ROT.js) app that allows multiple players to connect to custom worlds and play together</li>
-						<li>Features FOV and a fog-of-war like vision system</li>
-						<li>Still under construction, with plans to implement health, items and AI pathfinding</li>
+						<li>Node.js (with Socket.io and ROT.js) app that allows multiple players to connect to custom worlds and play together in a simple turnbased fashion</li>
+						<li>Features FOV, naive turn system, AI path finding, and a fog-of-war like vision system</li>
+						<li>Still under construction, with plans to implement health, items, and combat</li>
 					</ul>
 					<h4>Compiler Labs for ECE 351</h4>
 					<ul>
 						<li>Implement a compiler for a subset of VHDL using Java</li>
-						<li>Designed tools for recognising, parsing, simplifying and optimising input statments</li>
+						<li>Designed tools for recognising, parsing, simplifying, desugaring, process splitting and optimising VHDL input statements</li>
+						<li>Wrote Java code to generate x86 Assembly to dynamically link via the JNI and evaluate waveforms from the Java VHDL compiler</li>
 					</ul>
-					<h4>Database Systems Project for ECE 356</h4>
+					<h4>TI MSP Launchpad Touchpanel</h4>
 					<ul>
-						<li>Implemented a RDBMS in Java for a Hospital system using Spring, JDBC (without Hibernate) for MySQL</li>
-					</ul>
-					<h4>MSP Launchpad Touchpanel</h4>
-					<ul>
-						<li>Utilised TI MSP430G Launchpad with capacitive touchpanel as a hobby project</li>
+						<li>Utilised TI MSP430G Launchpad with capacitive touch panel as a hobby project</li>
 						<li>LED feedback when scrolling a circular capacitive touchpad, using C and provided MSP libraries</li>
 					</ul>
-					<h4>OS Labs for ECE 254</h4>
-					<ul>
-						<li>Utilised Mutex, Semaphores, shared memory and message passing to avoid deadlock and starvation issues</li>
-						<li>Created multithreaded and multiple process programs on Linux and Keil (ARM) Real Time Systems</li>
-					</ul>
-					<h4>OS Labs for ECE 224</h4>
-					<ul>
-						<li>Wrote audio player in C to retrieve and playback WAV files from an SD card for the Cyclone II board</li>
-					</ul>
-					<h4>Assembly Calculator for ECE 222</h4>
-					<ul>
-						<li>Created a calculator and timer from scratch in Motorola 68K Assembly, with the ability to respond to hardware keypresses and keyboard input</li>
-                        <li>Created a 'system clock' based on interrupts to fire every second, with pause/reset/reprogram/start functionality</li>
-                        <li>Investigated synchronisaion techniques by handling hardware keypad input using UART protocol</li>
-					</ul>
-
 				</div>
 			</div>
 			<div class="section">
@@ -235,13 +248,13 @@
 				<div class="section-body">
 					<h3>University of Waterloo, Waterloo ON, Sep 2010 - Present</h3>
 					<div>
-						<p><strong>Major:</strong> Honours Computer Engineering</p>
-						<p><strong>Relevant Courses: </strong>Operating Systems, Digital Computers, Embedded Systems Programming</p>
-						<h4>Academic ECE Class 2015 Representative, Sept 2012 - Present</h4>
+						<h4><strong>Major:</strong> Honours Computer Engineering</h4>
+						<h4><strong>Relevant Courses: </strong>Operating Systems, Digital Computers, Embedded Systems Programming</h4>
+						<h4><strong>Academic ECE Class 2015 Representative,</strong> Sept 2012 - Present</h4>
 						<ul>
 							<li>Meet with Professors, lab instructors and TAs monthly to discuss and solve class issues</li>
 						</ul>
-						<h4>Engineering Society ECE Class 2015 Representative, Sep 2010 - Present</h4>
+						<h4><strong>Engineering Society ECE Class 2015 Representative,</strong> Sep 2010 - Present</h4>
 						<ul>
 							<li>Attend all bi-weekly Engineering Society meetings and represent class when voting on policy amendments</li>
 							<li>Maintain a link between the ECE Class of 2015 and the executive, as well making sure the class is informed of upcoming events and policy changes</li>
@@ -256,7 +269,7 @@
 						<li>Baking Bread (Ciabatta, Marbled Rye, Sourdough!)</li>
 						<li>Coding and Breaking Things</li>
 						<li>Murder Most Foul; Reading</li>
-						<li>Drawing and Painting; Analog Photography & Film Development</li>
+						<li>Drawing and Painting; Analog Photography &amp; Film Development</li>
 						<li>Canadian History</li>
 					</ul>
 				</div>
@@ -264,4 +277,7 @@
 		</div>
 	</div>
 </body>
+
+
+
 
