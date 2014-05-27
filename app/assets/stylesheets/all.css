@@ -117,3 +117,7 @@ text.shadow {
 .google-visualization-table-table {
 	width: 100% !important;
 }
+
+.headroom--unpinned {
+	display: none;
+}

@@ -10,8 +10,12 @@
 
 
     <%= stylesheet_link_tag    "all" %>
+
     <%= stylesheet_link_tag    "theme.min" %>
+    <%= javascript_include_tag "headroom" %>
+
 	<%= javascript_include_tag "utils" %>
+
 	
 	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 	<script type='text/javascript' src='https://www.google.com/jsapi'></script>
@@ -21,7 +25,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 	<script type="text/javascript">
-
 	  var _gaq = _gaq || [];
 	  _gaq.push(['_setAccount', 'UA-36435564-1']);
 	  _gaq.push(['_setDomainName', 'andrewsvoboda.me']);
@@ -32,11 +35,18 @@
 		ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
 		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 	  })();
-
 	</script>	
+
+	<script type="text/javascript">
+		$(document).ready(function () {
+			var nav = document.getElementById("nav-jn");
+			var headroom  = new Headroom(nav);
+			headroom.init();
+		});
+	</script>
 </head>
 <body>
-	<nav id="nav-jn" class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<header id="nav-jn" class="navbar navbar-default navbar-fixed-top" role="navigation">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
 				<span class="sr-only">Toggle navigation</span>
@@ -65,7 +75,7 @@
                 <li><%= link_to "Resume", '/resume' %></li>
             </ul>
 	  </div>
-	</nav>
+	</header>
 
 <% if content_for(:title) == 'Home' %>
 <div id="cover">
