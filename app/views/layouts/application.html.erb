@@ -6,6 +6,7 @@
 	<script src="http://codeorigin.jquery.com/jquery-2.0.3.min.js"></script>
 	
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.0/animate.min.css">
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 
 
@@ -40,7 +41,17 @@
 	<script type="text/javascript">
 		$(document).ready(function () {
 			var nav = document.getElementById("nav-jn");
-			var headroom  = new Headroom(nav);
+			var headroom  = new Headroom(nav, {
+					"tolerance": 5,
+					"offset": 205,
+					"classes": {
+					"initial": "animated",
+					"pinned": "fadeInDown",
+					"unpinned": "fadeOutUp",
+					"top": "headroom--top",
+					"notTop": "headroom--not-top"
+				}
+			});
 			headroom.init();
 		});
 	</script>
